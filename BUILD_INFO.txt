@@ -1,4 +1,3 @@
-SOURCE_REPO=ezzpay/boxphone
-SOURCE_SHA=0e995cf5a80985aed6f9fb99b895bebb3aa68805
-TAG_OR_REF=refs/heads/feat/build-prod-ciccd
-BUILD_TIME_UTC=2025-12-30T21:58:54Z
+SOURCE_SHA=7654a1e5f01f5986c1c626c5d6ec8a4b2bdc15a0
+TAG_OR_REF=feat/build-prod-ciccd
+BUILD_TIME_UTC+7=2025-12-31T05:05:23+0700
