@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Management - EzPay Auto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            color: #333;
+        }
+        
+        .service-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .status-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .devices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .device-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .device-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .device-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .device-status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .status-green {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-red {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .device-info {
+            margin-bottom: 15px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .info-label {
+            color: #666;
+        }
+        
+        .info-value {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        
+        .btn-save {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .message {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .message-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .message-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <h1>Device Management</h1>
+                <span class="status-badge" style="background: #e7f3ff; color: #004085; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 14px;">
+                    Box Type: <%= boxType %>
+                </span>
+            </div>
+            <div class="service-status">
+                <span class="status-badge <%= serviceStatus === 'active' ? 'status-active' : 'status-inactive' %>">
+                    Service: <%= serviceStatus === 'active' ? 'ACTIVE' : 'INACTIVE' %>
+                </span>
+                <% if (serviceStatus === 'active') { %>
+                    <button class="btn btn-danger" onclick="stopService()">Stop Service</button>
+                <% } else { %>
+                    <button class="btn btn-success" onclick="startService()">Start Service</button>
+                <% } %>
+            </div>
+        </div>
+        
+        <div id="message" class="message"></div>
+        
+        <div class="devices-grid">
+            <% devices.forEach(device => { %>
+                <div class="device-card" data-device-id="<%= device.udid %>">
+                    <div class="device-header">
+                        <div class="device-name"><%= device.name || device.udid %></div>
+                        <span class="device-status <%= device.status === 'active' ? 'status-green' : 'status-red' %>">
+                            <%= device.status === 'active' ? 'ACTIVE' : 'DEACTIVE' %>
+                        </span>
+                    </div>
+                    
+                    <div class="device-info">
+                        <div class="info-row">
+                            <span class="info-label">UDID:</span>
+                            <span class="info-value"><%= device.udid.substring(0, 20) %>...</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Group:</span>
+                            <span class="info-value"><%= device.group || 'N/A' %></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">System:</span>
+                            <span class="info-value"><%= device.system_version || 'N/A' %></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Status:</span>
+                            <span class="info-value"><%= device.status ? 'Online' : 'Offline' %></span>
+                        </div>
+                    </div>
+                    
+                    <form onsubmit="updateDevice(event, '<%= device.udid %>')">
+                        <div class="form-group">
+                            <label>Bank Code</label>
+                            <select name="bankCode" id="bank-<%= device.udid %>">
+                                <option value="">-- Select Bank --</option>
+                                <% banks.forEach(bank => { %>
+                                    <option value="<%= bank %>" <%= device.bankCode === bank ? 'selected' : '' %>>
+                                        <%= bank %>
+                                    </option>
+                                <% }); %>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Available Amount (VND)</label>
+                            <input 
+                                type="number" 
+                                name="availableAmount" 
+                                id="amount-<%= device.udid %>"
+                                value="<%= device.availableAmount || 0 %>"
+                                min="0"
+                                step="1000"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Password (for ACB login)</label>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password-<%= device.udid %>"
+                                value="<%= device.password || '' %>"
+                                placeholder="Enter password for bank login"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Smart OTP</label>
+                            <input 
+                                type="text" 
+                                name="smartOTP" 
+                                id="smartOTP-<%= device.udid %>"
+                                value="<%= device.smartOTP || '' %>"
+                                placeholder="Enter Smart OTP code"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Device Status</label>
+                            <select name="status" id="status-<%= device.udid %>">
+                                <option value="deactive" <%= device.status === 'deactive' || !device.status ? 'selected' : '' %>>Deactive</option>
+                                <option value="active" <%= device.status === 'active' ? 'selected' : '' %>>Active</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-save">Save Config</button>
+                    </form>
+                    
+                    <% if (device.status === 'active' && device.bankCode) { %>
+                        <button 
+                            type="button" 
+                            class="btn btn-success" 
+                            style="margin-top: 10px; width: 100%;"
+                            onclick="retryLogin('<%= device.udid %>')"
+                            id="retry-btn-<%= device.udid %>"
+                        >
+                            Retry Login
+                        </button>
+                    <% } %>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    
+    <script>
+        function showMessage(message, type = 'success') {
+            const msgEl = document.getElementById('message');
+            msgEl.textContent = message;
+            msgEl.className = `message message-${type}`;
+            msgEl.style.display = 'block';
+            setTimeout(() => {
+                msgEl.style.display = 'none';
+            }, 3000);
+        }
+        
+        async function updateDevice(event, deviceId) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const bankCode = document.getElementById(`bank-${deviceId}`).value.trim();
+            const availableAmount = parseFloat(document.getElementById(`amount-${deviceId}`).value);
+            const password = document.getElementById(`password-${deviceId}`).value.trim();
+            const smartOTP = document.getElementById(`smartOTP-${deviceId}`).value.trim();
+            const status = document.getElementById(`status-${deviceId}`).value;
+            
+            // Frontend validation: if status is 'active', all fields are required
+            if (status === 'active') {
+                const errors = [];
+                
+                if (!bankCode || bankCode === '') {
+                    errors.push('Bank Code là bắt buộc khi status là active');
+                }
+                
+                if (isNaN(availableAmount) || availableAmount < 0) {
+                    errors.push('Available Amount là bắt buộc và phải >= 0 khi status là active');
+                }
+                
+                if (!password || password === '') {
+                    errors.push('Password là bắt buộc khi status là active');
+                }
+                
+                if (!smartOTP || smartOTP === '') {
+                    errors.push('Smart OTP là bắt buộc khi status là active');
+                }
+                
+                if (errors.length > 0) {
+                    showMessage(errors.join(', '), 'error');
+                    return;
+                }
+            }
+            
+            try {
+                const response = await fetch(`/api/devices/${deviceId}/config`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        bankCode: bankCode || undefined,
+                        availableAmount: availableAmount || 0,
+                        password: password || undefined,
+                        smartOTP: smartOTP || undefined,
+                        status: status || 'deactive',
+                    }),
+                });
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP ${response.status}: ${errorText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showMessage('Device config updated successfully!', 'success');
+                    // Update UI
+                    const card = document.querySelector(`[data-device-id="${deviceId}"]`);
+                    if (card) {
+                        const statusBadge = card.querySelector('.device-status');
+                        if (statusBadge) {
+                            statusBadge.className = `device-status ${status === 'active' ? 'status-green' : 'status-red'}`;
+                            statusBadge.textContent = status === 'active' ? 'ACTIVE' : 'DEACTIVE';
+                        }
+                    }
+                } else {
+                    const errorMsg = data.error || 'Failed to update device config';
+                    showMessage(errorMsg, 'error');
+                }
+            } catch (error) {
+                console.error('Update device error:', error);
+                showMessage('Error updating device config: ' + (error.message || error), 'error');
+            }
+        }
+        
+        async function startService() {
+            try {
+                const response = await fetch('/api/service/start', {
+                    method: 'POST',
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    // HTTP error response (400, 500, etc.)
+                    const errorMsg = data.error || 'Failed to start service';
+                    showMessage(errorMsg, 'error');
+                    return;
+                }
+                
+                if (data.success) {
+                    showMessage('Service started successfully!', 'success');
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
+                } else {
+                    const errorMsg = data.error || 'Failed to start service';
+                    showMessage(errorMsg, 'error');
+                }
+            } catch (error) {
+                // Handle network errors or other exceptions
+                showMessage('Error starting service: ' + (error.message || error), 'error');
+            }
+        }
+        
+        async function stopService() {
+            try {
+                const response = await fetch('/api/service/stop', {
+                    method: 'POST',
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showMessage('Service stopped successfully!', 'success');
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
+                } else {
+                    showMessage('Failed to stop service', 'error');
+                }
+            } catch (error) {
+                showMessage('Error stopping service: ' + error.message, 'error');
+            }
+        }
+        
+        async function retryLogin(deviceId) {
+            const btn = document.getElementById(`retry-btn-${deviceId}`);
+            const originalText = btn.textContent;
+            
+            // Disable button and show loading state
+            btn.disabled = true;
+            btn.textContent = 'Logging in...';
+            btn.style.opacity = '0.6';
+            
+            try {
+                const response = await fetch(`/api/devices/${deviceId}/retryLogin`, {
+                    method: 'POST',
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    const errorMsg = data.error || 'Failed to retry login';
+                    showMessage(errorMsg, 'error');
+                    return;
+                }
+                
+                if (data.success) {
+                    showMessage(data.message || 'Login successful!', 'success');
+                } else {
+                    const errorMsg = data.error || 'Failed to retry login';
+                    showMessage(errorMsg, 'error');
+                }
+            } catch (error) {
+                showMessage('Error retrying login: ' + (error.message || error), 'error');
+            } finally {
+                // Re-enable button
+                btn.disabled = false;
+                btn.textContent = originalText;
+                btn.style.opacity = '1';
+            }
+        }
+    </script>
+</body>
+</html>
+

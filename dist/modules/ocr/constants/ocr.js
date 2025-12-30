@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"t",{value:!0}),exports.OCR_BANK_LANGUAGES=void 0,exports.OCR_BANK_LANGUAGES={ACB:"eng",PGBANK:"vie"};
