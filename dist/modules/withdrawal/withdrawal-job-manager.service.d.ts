@@ -64,4 +64,5 @@ export declare class WithdrawalJobManagerService implements OnModuleInit {
         };
     }>;
     periodicJobPicking(): Promise<void>;
+    promoteDelayedJobs(): Promise<void>;
 }
