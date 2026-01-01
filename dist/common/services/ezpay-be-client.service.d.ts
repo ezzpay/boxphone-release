@@ -1,4 +1,5 @@
 import { HttpService } from '@nestjs/axios';
+import { BillAnalyzedStatus } from '@/modules/bank/interfaces/bank-service.interface';
 export declare class EzpayBeClientService {
     private readonly httpService;
     private readonly logger;
@@ -6,7 +7,7 @@ export declare class EzpayBeClientService {
     private readonly apiKey;
     constructor(httpService: HttpService);
     updateWithdrawalStatus(withdrawalId: string, payload: {
-        analyzedStatus: 'success' | 'failed';
+        analyzedStatus: BillAnalyzedStatus;
         sourceAccountNo: string;
         sourceBankCode: string;
         receipt: string;

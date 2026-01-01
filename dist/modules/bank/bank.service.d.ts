@@ -21,7 +21,7 @@ export declare class BankService {
     getSupportedBanks(): string[];
     login(bankCode: string, deviceId: string, force?: boolean): Promise<void>;
     loginAllActiveBanks(): Promise<void>;
-    executeTransfer(withdrawal: Withdrawal, deviceId: string, bankCode: string, skipLockCheck?: boolean, maxRetries?: number): Promise<boolean>;
+    executeTransfer(withdrawal: Withdrawal, deviceId: string, bankCode: string): Promise<void>;
     isSessionValid(deviceId: string, bankCode: string): Promise<boolean>;
     getBillImage(bankCode: string, withdrawalCode: string): Promise<string | null>;
     analyzeTransferBill(bankCode: string, withdrawal: Withdrawal): Promise<IAnalyzeTransferBillResult | null>;

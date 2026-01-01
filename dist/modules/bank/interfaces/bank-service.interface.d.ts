@@ -1,9 +1,9 @@
 import { ICaptureScreenOptions } from '@/common/modules/websocket/interface/websocket.interface';
 import { Withdrawal } from '../../../common/interfaces/withdrawal.interface';
+export type BillAnalyzedStatus = 'success' | 'unknown' | 'na';
 export interface IAnalyzeTransferBillResult {
     raw: string | null;
-    analyzedStatus: 'success' | 'pending' | 'unknown';
-    success: boolean;
+    analyzedStatus: BillAnalyzedStatus;
 }
 export interface IBankService {
     getBankCode(): string;

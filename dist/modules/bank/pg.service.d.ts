@@ -10,7 +10,7 @@ export declare class PgService extends BaseBankService {
     private inputPasswordFromConfig;
     private inputSmartOTPFromConfig;
     login(deviceId: string): Promise<void>;
-    executeTransfer(withdrawal: Withdrawal, deviceId: string, maxRetries?: number): Promise<void>;
+    executeTransfer(withdrawal: Withdrawal, deviceId: string): Promise<void>;
     executeInternalTransfer(withdrawal: Withdrawal, deviceId: string): Promise<void>;
     executeExternalTransfer(withdrawal: Withdrawal, deviceId: string): Promise<void>;
     onModuleInit(): Promise<void>;
