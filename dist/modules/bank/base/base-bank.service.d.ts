@@ -20,6 +20,7 @@ export declare abstract class BaseBankService implements IBankService {
     clickWithTransition(deviceId: string, x: number, y: number, transitionTime: number, log?: string): Promise<void>;
     captureScreen(deviceId: string, options: ICaptureScreenOptions): Promise<void>;
     getBillImage(folderPath: string): Promise<string | null>;
+    getBillImagePath(folderPath: string): Promise<string | null>;
     analyzeTransferBill(withdrawal: Partial<Withdrawal>): Promise<IAnalyzeTransferBillResult>;
     abstract login(deviceId: string): Promise<void>;
     abstract executeInternalTransfer(withdrawal: Withdrawal, deviceId: string): Promise<void>;

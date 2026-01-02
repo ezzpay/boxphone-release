@@ -10,7 +10,12 @@ interface IConfig {
         apiUrl: string;
         apiKey: string;
     };
-    spaceOcrKey: string;
+    spaceocr: {
+        datacenterPrimary: string;
+        datacenterSecond: string;
+        key: string;
+        keyFree: string;
+    };
 }
 export declare const config: IConfig;
 export {};

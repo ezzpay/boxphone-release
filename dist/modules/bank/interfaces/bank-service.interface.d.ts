@@ -2,7 +2,7 @@ import { ICaptureScreenOptions } from '@/common/modules/websocket/interface/webs
 import { Withdrawal } from '../../../common/interfaces/withdrawal.interface';
 export type BillAnalyzedStatus = 'success' | 'unknown' | 'na';
 export interface IAnalyzeTransferBillResult {
-    raw: string | null;
+    rawPath: string | null;
     analyzedStatus: BillAnalyzedStatus;
 }
 export interface IBankService {

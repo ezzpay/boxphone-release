@@ -11,5 +11,5 @@ export declare class EzpayBeClientService {
         sourceAccountNo: string;
         sourceBankCode: string;
         receipt: string;
-    }, retryCount?: number): Promise<boolean>;
+    }): Promise<boolean>;
 }
