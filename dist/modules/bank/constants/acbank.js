@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"o",{value:!0}),exports.ACB_UI_COORDINATES=void 0;const o=require("../../../common/constants/config"),e=require("../../../common/constants/keyboard"),s={LOGIN_BUTTON:{x:.5,y:.8},LOGIN_BUTTON_API:{x:.5,y:.62},PASSWORD_FIELD:{x:.5,y:.45}},t=(0,e.scaleCoordinates)(s);exports.ACB_UI_COORDINATES="PANDA"===o.config.boxType?t:s;

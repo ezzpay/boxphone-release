@@ -15,6 +15,7 @@ module.exports = {
       wait_ready: true,
       kill_timeout: 20000,
       listen_timeout: 30000,
+      node_args: '--enable-source-maps',
       env: {
         NODE_ENV: 'production',
         NODE_OPTIONS: '--max-old-space-size=8000',

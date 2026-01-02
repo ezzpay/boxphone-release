@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"p",{value:!0}),exports.getMimeType=exports.BILL_IMAGE_EXTENSIONS=void 0,exports.BILL_IMAGE_EXTENSIONS=[".png"];const e=e=>({".png":"image/png"}[e.toLowerCase()]||"image/png");exports.getMimeType=e;
