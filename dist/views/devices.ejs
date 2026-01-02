@@ -288,6 +288,7 @@
                                 value="<%= device.availableAmount || 0 %>"
                                 min="0"
                                 step="1000"
+                                required
                             >
                         </div>
                         
@@ -299,6 +300,7 @@
                                 id="password-<%= device.udid %>"
                                 value="<%= device.password || '' %>"
                                 placeholder="Enter password for bank login"
+                                required
                             >
                         </div>
                         
@@ -310,6 +312,31 @@
                                 id="smartOTP-<%= device.udid %>"
                                 value="<%= device.smartOTP || '' %>"
                                 placeholder="Enter Smart OTP code"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Account No</label>
+                            <input 
+                                type="text" 
+                                name="accountNo" 
+                                id="accountNo-<%= device.udid %>"
+                                value="<%= device.accountNo || '' %>"
+                                placeholder="Enter account number"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Account Name</label>
+                            <input 
+                                type="text" 
+                                name="accountName" 
+                                id="accountName-<%= device.udid %>"
+                                value="<%= device.accountName || '' %>"
+                                placeholder="Enter account name"
+                                required
                             >
                         </div>
                         
@@ -359,6 +386,8 @@
             const availableAmount = parseFloat(document.getElementById(`amount-${deviceId}`).value);
             const password = document.getElementById(`password-${deviceId}`).value.trim();
             const smartOTP = document.getElementById(`smartOTP-${deviceId}`).value.trim();
+            const accountNo = document.getElementById(`accountNo-${deviceId}`).value.trim();
+            const accountName = document.getElementById(`accountName-${deviceId}`).value.trim();
             const status = document.getElementById(`status-${deviceId}`).value;
             
             // Frontend validation: if status is 'active', all fields are required
@@ -381,6 +410,14 @@
                     errors.push('Smart OTP là bắt buộc khi status là active');
                 }
                 
+                if (!accountNo || accountNo === '') {
+                    errors.push('Account No là bắt buộc khi status là active');
+                }
+                
+                if (!accountName || accountName === '') {
+                    errors.push('Account Name là bắt buộc khi status là active');
+                }
+                
                 if (errors.length > 0) {
                     showMessage(errors.join(', '), 'error');
                     return;
@@ -398,6 +435,8 @@
                         availableAmount: availableAmount || 0,
                         password: password || undefined,
                         smartOTP: smartOTP || undefined,
+                        accountNo: accountNo || undefined,
+                        accountName: accountName || undefined,
                         status: status || 'deactive',
                     }),
                 });

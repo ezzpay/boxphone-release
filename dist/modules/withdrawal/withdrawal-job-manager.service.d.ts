@@ -22,6 +22,7 @@ export declare class WithdrawalJobManagerService implements OnModuleInit {
     pickAndProcessJobs(count?: number): Promise<void>;
     private processJob;
     private handleJobFailure;
+    private promoteDelayedJobs;
     triggerPickJobs(count?: number): Promise<void>;
     getQueueStats(): Promise<{
         serviceStatus: "active" | "inactive";
@@ -64,5 +65,5 @@ export declare class WithdrawalJobManagerService implements OnModuleInit {
         };
     }>;
     periodicJobPicking(): Promise<void>;
-    promoteDelayedJobs(): Promise<void>;
+    promoteDelayedJobsPeriodically(): Promise<void>;
 }
