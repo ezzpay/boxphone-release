@@ -8,13 +8,14 @@ module.exports = {
       autorestart: true,
       watch: false,
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
-      min_uptime: 30000,
+      min_uptime: 20000,
       max_restarts: 10,
       merge_logs: false, // Log vào file riêng
       max_memory_restart: '4G',
       wait_ready: true,
       kill_timeout: 20000,
-      listen_timeout: 30000,
+      listen_timeout: 20000,
+      cwd: __dirname,
       node_args: '--enable-source-maps',
       env: {
         NODE_ENV: 'production',
