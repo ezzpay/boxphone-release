@@ -1,4 +1,4 @@
-SOURCE_SHA=fe0eac3
-Message=Fix: create folder bill
+SOURCE_SHA=58075d5
+Message=Fix: log with list devices #1
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-04T17:10:34+0700
+BUILD_TIME_UTC+7=2026-01-04T21:17:55+0700
