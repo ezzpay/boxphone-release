@@ -1,4 +1,4 @@
-SOURCE_SHA=ab30034
-Message=fix: log pg bank (#9)
+SOURCE_SHA=f185c72
+Message=fix: error when callback
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-04T21:40:43+0700
+BUILD_TIME_UTC+7=2026-01-05T02:26:59+0700
