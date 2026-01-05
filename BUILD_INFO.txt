@@ -1,4 +1,4 @@
-SOURCE_SHA=f185c72
-Message=fix: error when callback
+SOURCE_SHA=750f8de
+Message=Delay for kyc
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-05T02:26:59+0700
+BUILD_TIME_UTC+7=2026-01-05T21:29:10+0700
