@@ -1,4 +1,4 @@
-SOURCE_SHA=ba84909
-Message=Fix: select bill image if retry
+SOURCE_SHA=8e0d4e9
+Message=Fix: timeout between step
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-06T00:30:52+0700
+BUILD_TIME_UTC+7=2026-01-06T03:03:45+0700
