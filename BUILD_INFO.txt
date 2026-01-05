@@ -1,4 +1,4 @@
-SOURCE_SHA=acf8f84
-Message=release log before force login
+SOURCE_SHA=8f2161a
+Message=fix: kyc waiting
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-05T21:58:54+0700
+BUILD_TIME_UTC+7=2026-01-05T23:41:22+0700
