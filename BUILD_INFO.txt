@@ -1,4 +1,4 @@
-SOURCE_SHA=bca8972
-Message=Fix: smart otp with virtual input
+SOURCE_SHA=4f0708f
+Message=Fix: input otp to numpad
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-06T17:31:03+0700
+BUILD_TIME_UTC+7=2026-01-07T02:05:01+0700
