@@ -1,4 +1,4 @@
-SOURCE_SHA=8e0d4e9
-Message=Fix: timeout between step
+SOURCE_SHA=f030289
+Message=fix: sleep when kill app
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-06T03:03:45+0700
+BUILD_TIME_UTC+7=2026-01-06T13:42:41+0700
