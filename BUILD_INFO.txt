@@ -1,4 +1,4 @@
-SOURCE_SHA=3de0707
-Message=fix: log for image analyze
+SOURCE_SHA=ac88b56
+Message=fix: notify to be without blocking process
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-07T10:59:38+0700
+BUILD_TIME_UTC+7=2026-01-07T13:01:55+0700
