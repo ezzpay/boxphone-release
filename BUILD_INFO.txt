@@ -1,4 +1,4 @@
-SOURCE_SHA=4c30956
-Message=fix: time delay between on/off keyboard
+SOURCE_SHA=f88dc58
+Message=fix: tăng timeout login
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-07T17:06:35+0700
+BUILD_TIME_UTC+7=2026-01-07T17:45:04+0700
