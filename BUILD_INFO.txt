@@ -1,4 +1,4 @@
-SOURCE_SHA=b028736
-Message=Fix: input otp to virtual numpad
+SOURCE_SHA=3de0707
+Message=fix: log for image analyze
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-07T03:00:04+0700
+BUILD_TIME_UTC+7=2026-01-07T10:59:38+0700
