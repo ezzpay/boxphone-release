@@ -1,4 +1,4 @@
-SOURCE_SHA=eccd6c6
-Message=feat: finish QR transfer (#10)
+SOURCE_SHA=72bad8d
+Message=fix: transfer qr code #1 (#11)
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-09T00:14:04+0700
+BUILD_TIME_UTC+7=2026-01-09T00:41:14+0700
