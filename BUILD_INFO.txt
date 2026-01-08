@@ -1,4 +1,4 @@
-SOURCE_SHA=15752cf
-Message=fix: select bank service by bank code (#12)
+SOURCE_SHA=66695cb
+Message=fix: comment debug
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-09T02:12:07+0700
+BUILD_TIME_UTC+7=2026-01-09T02:33:45+0700
