@@ -1,4 +1,4 @@
-SOURCE_SHA=4a0c80a
-Message=fix: refresh session
+SOURCE_SHA=eccd6c6
+Message=feat: finish QR transfer (#10)
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-07T17:56:18+0700
+BUILD_TIME_UTC+7=2026-01-09T00:14:04+0700
