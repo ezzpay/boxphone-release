@@ -1,4 +1,4 @@
-SOURCE_SHA=12c5f17
-Message=,
+SOURCE_SHA=9ad3606
+Message=feat: Update analyze bill with dynamic ROI
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-10T00:59:01+0700
+BUILD_TIME_UTC+7=2026-01-10T01:29:29+0700
