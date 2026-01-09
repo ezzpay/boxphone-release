@@ -1,4 +1,4 @@
-SOURCE_SHA=0e3115d
-Message=fix: flow of no bill after otp
+SOURCE_SHA=c0d86ec
+Message=fixx: force login after select image
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-09T15:39:20+0700
+BUILD_TIME_UTC+7=2026-01-09T16:14:59+0700
