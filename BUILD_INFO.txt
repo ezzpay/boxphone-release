@@ -1,4 +1,4 @@
-SOURCE_SHA=cca728a
-Message=Fix: delay focus password field
+SOURCE_SHA=fea40e6
+Message=Merge branch 'hdbank'
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-09T21:41:54+0700
+BUILD_TIME_UTC+7=2026-01-09T23:50:18+0700
