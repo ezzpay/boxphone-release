@@ -1,4 +1,4 @@
-SOURCE_SHA=56ed95c
-Message=fix: select photo qr
+SOURCE_SHA=83fbf2a
+Message=fix: select photo qr #2
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-09T16:19:14+0700
+BUILD_TIME_UTC+7=2026-01-09T16:21:17+0700
