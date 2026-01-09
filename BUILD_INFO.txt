@@ -1,4 +1,4 @@
-SOURCE_SHA=83fbf2a
-Message=fix: select photo qr #2
+SOURCE_SHA=5a25e51
+Message=fix: update passowrd field coordinate
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-09T16:21:17+0700
+BUILD_TIME_UTC+7=2026-01-09T21:22:13+0700
