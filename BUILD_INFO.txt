@@ -1,4 +1,4 @@
-SOURCE_SHA=90a1c59
-Message=refactor: logging
+SOURCE_SHA=8e6ac4c
+Message=feat: notification service
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-09T11:15:03+0700
+BUILD_TIME_UTC+7=2026-01-09T12:27:54+0700
