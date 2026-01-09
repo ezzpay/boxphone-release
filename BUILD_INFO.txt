@@ -1,4 +1,4 @@
-SOURCE_SHA=66695cb
-Message=fix: comment debug
+SOURCE_SHA=eb3298e
+Message=refactor: PG service by removing redundant code
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-09T02:33:45+0700
+BUILD_TIME_UTC+7=2026-01-09T09:49:10+0700
