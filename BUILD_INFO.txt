@@ -1,4 +1,4 @@
-SOURCE_SHA=71877ba
-Message=Fix: press function key coordinate
+SOURCE_SHA=4d9e479
+Message=Fix: press function key coordinate #2
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-10T19:41:46+0700
+BUILD_TIME_UTC+7=2026-01-10T19:44:00+0700
