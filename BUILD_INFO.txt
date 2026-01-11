@@ -1,4 +1,4 @@
-SOURCE_SHA=4d9e479
-Message=Fix: press function key coordinate #2
+SOURCE_SHA=7735019
+Message=Feat/telegram (#13)
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-10T19:44:00+0700
+BUILD_TIME_UTC+7=2026-01-11T15:22:35+0700
