@@ -1,4 +1,4 @@
-SOURCE_SHA=0aa3548
-Message=feat: restart boxphone
+SOURCE_SHA=81d705e
+Message=Fix: restarting box but job is added
 TAG_OR_REF=feat/restart-panda-software
-BUILD_TIME_UTC+7=2026-01-11T22:49:48+0700
+BUILD_TIME_UTC+7=2026-01-12T02:22:24+0700
