@@ -1,4 +1,4 @@
-SOURCE_SHA=dce3528
+SOURCE_SHA=0061d54
 Message=feat: restart boxphone
 TAG_OR_REF=feat/restart-panda-software
-BUILD_TIME_UTC+7=2026-01-11T20:25:43+0700
+BUILD_TIME_UTC+7=2026-01-11T20:35:08+0700
