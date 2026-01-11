@@ -1,4 +1,4 @@
-SOURCE_SHA=7735019
-Message=Feat/telegram (#13)
-TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-11T15:22:35+0700
+SOURCE_SHA=dce3528
+Message=feat: restart boxphone
+TAG_OR_REF=feat/restart-panda-software
+BUILD_TIME_UTC+7=2026-01-11T20:05:51+0700
