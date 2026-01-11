@@ -31,10 +31,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .header h1 {
             color: #333;
+            word-break: break-word;
+            flex: 1;
+            min-width: 200px;
         }
         
         .service-status {
@@ -97,39 +102,252 @@
             background: #218838;
         }
         
-        .devices-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         
-        .device-card {
+        .btn-success:disabled {
+            background: #6c757d;
+            opacity: 0.6;
+        }
+        
+        .table-container {
             background: white;
             border-radius: 8px;
-            padding: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            overflow-y: auto;
+            min-height: calc(100vh - 280px);
+            max-height: calc(100vh - 280px);
+            display: flex;
+            flex-direction: column;
         }
         
-        .device-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
+        .devices-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1200px;
+        }
+        
+        .devices-table thead {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        
+        .devices-table thead {
+            background: #f8f9fa;
+        }
+        
+        .devices-table th,
+        .devices-table td {
+            padding: 12px;
+            text-align: left;
             border-bottom: 1px solid #eee;
         }
         
+        .devices-table th {
+            font-weight: 600;
+            color: #333;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+        
+        .devices-table th:nth-child(1),
+        .devices-table td:nth-child(1) {
+            width: 25%;
+        }
+        
+        .devices-table th:nth-child(2),
+        .devices-table td:nth-child(2) {
+            width: 10%;
+            white-space: nowrap;
+        }
+        
+        .devices-table td {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .devices-table tr:hover {
+            background: #f8f9fa;
+        }
+        
         .device-name {
-            font-size: 18px;
             font-weight: 600;
             color: #333;
         }
         
-        .device-status {
-            padding: 6px 12px;
-            border-radius: 20px;
+        .device-udid {
+            font-family: monospace;
             font-size: 12px;
+            word-break: break-all;
+            word-wrap: break-word;
+            max-width: 200px;
+        }
+        
+        .table-form-group {
+            margin-bottom: 8px;
+        }
+        
+        .table-form-group:last-child {
+            margin-bottom: 0;
+        }
+        
+        .table-form-group label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 11px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .table-form-group select,
+        .table-form-group input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .table-form-group input:focus,
+        .table-form-group select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        
+        .table-form-group input:disabled {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        .devices-table th:last-child,
+        .devices-table td:last-child {
+            position: sticky;
+            right: 0;
+            background: white;
+            z-index: 10;
+            box-shadow: -2px 0 4px rgba(0,0,0,0.1);
+            width: auto;
+            max-width: 20px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        
+        .devices-table thead th:last-child {
+            background: #f8f9fa;
+        }
+        
+        .devices-table tr:hover td:last-child {
+            background: #f8f9fa;
+        }
+        
+        .action-menu {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .action-menu-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            font-size: 18px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .action-menu-btn:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .action-menu-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            min-width: 150px;
+            z-index: 1000;
+            display: none;
+            margin-top: 4px;
+        }
+        
+        .action-menu-dropdown.show {
+            display: block;
+        }
+        
+        .action-menu-item {
+            display: block;
+            width: 100%;
+            padding: 10px 16px;
+            text-align: left;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            transition: background 0.2s;
+        }
+        
+        .action-menu-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .action-menu-item:first-child {
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        
+        .action-menu-item:last-child {
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+        
+        .action-menu-item.btn-danger {
+            color: #dc3545;
+        }
+        
+        .action-menu-item.btn-danger:hover {
+            background: #f8d7da;
+        }
+        
+        .action-menu-item.btn-success {
+            color: #28a745;
+        }
+        
+        .action-menu-item.btn-success:hover {
+            background: #d4edda;
+        }
+        
+        .action-menu-item:disabled {
+            color: #999;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        .action-menu-item:disabled:hover {
+            background: none;
+        }
+        
+        .device-status {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
             font-weight: 600;
+            display: inline-block;
         }
         
         .status-green {
@@ -142,24 +360,29 @@
             color: #721c24;
         }
         
-        .device-info {
-            margin-bottom: 15px;
-        }
-        
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        
-        .info-label {
-            color: #666;
-        }
-        
-        .info-value {
-            color: #333;
-            font-weight: 500;
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .header-left {
+                width: 100%;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+                word-break: break-word;
+            }
+            
+            .service-status {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            
+            .table-container {
+                overflow-x: scroll;
+            }
         }
         
         .form-group {
@@ -172,6 +395,13 @@
             font-size: 13px;
             color: #666;
             font-weight: 500;
+        }
+        
+        .form-group label .note {
+            font-size: 11px;
+            color: #999;
+            font-weight: 400;
+            margin-left: 5px;
         }
         
         .form-group select,
@@ -189,7 +419,28 @@
             border-color: #007bff;
         }
         
+        .form-group input:disabled {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
         .btn-save {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .buttons-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .buttons-row .btn {
+            flex: 1;
+        }
+        
+        .btn-delete {
             width: 100%;
             margin-top: 10px;
         }
@@ -212,12 +463,89 @@
             color: #721c24;
             border: 1px solid #f5c6cb;
         }
+        
+        .editable-cell {
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        
+        .editable-cell:hover {
+            background: #f0f0f0;
+        }
+        
+        .editable-cell.empty {
+            color: #999;
+            font-style: italic;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 20px;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+        
+        .modal-body {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div style="display: flex; align-items: center; gap: 20px;">
+            <div class="header-left" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
                 <h1>Device Management</h1>
                 <span class="status-badge" style="background: #e7f3ff; color: #004085; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 14px;">
                     Box Type: <%= boxType %>
@@ -237,69 +565,150 @@
         
         <div id="message" class="message"></div>
         
-        <div class="devices-grid">
-            <% devices.forEach(device => { %>
-                <div class="device-card" data-device-id="<%= device.udid %>">
-                    <div class="device-header">
-                        <div class="device-name"><%= device.name || device.udid %></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h2 style="margin: 0;">Devices</h2>
+            <button class="btn btn-primary" onclick="openCreateModal()">+ Create New Device</button>
+        </div>
+        
+        <div class="table-container">
+            <table class="devices-table">
+                <thead>
+                    <tr>
+                        <th>Device Name</th>
+                        <th>Status</th>
+                        <th>Bank Account</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <% devices.filter(device => device.bankCode).forEach(device => { %>
+                <tr data-device-id="<%= device.udid %>">
+                    <td>
+                        <div>
+                            <div class="device-name"><%= device.name || device.udid %></div>
+                            <div style="font-size: 11px; color: #999; margin-top: 4px;">
+                                <%= device.status ? 'Online' : 'Offline' %>
+                            </div>
+                            <div style="font-size: 11px; color: #666; margin-top: 4px; word-break: break-all;">
+                                udid: <%= device.udid %>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width: auto; white-space: nowrap;">
                         <span class="device-status <%= device.status === 'active' ? 'status-green' : 'status-red' %>">
                             <%= device.status === 'active' ? 'ACTIVE' : 'DEACTIVE' %>
                         </span>
-                    </div>
-                    
-                    <div class="device-info">
-                        <div class="info-row">
-                            <span class="info-label">UDID:</span>
-                            <span class="info-value"><%= device.udid.substring(0, 20) %>...</span>
+                    </td>
+                    <td>
+                        <div class="editable-cell <%= (!device.bankCode && !device.accountNo && !device.accountName) ? 'empty' : '' %>" onclick="openEditModal('<%= device.udid %>')">
+                            <div style="font-weight: 600; margin-bottom: 4px;">
+                                <%= device.bankCode || '-- Click to edit --' %>
+                            </div>
+                            <div style="font-weight: 500; margin-bottom: 4px; font-size: 13px;">
+                                <%= device.accountNo || '--' %>
+                            </div>
+                            <div style="font-size: 12px; color: #666; margin-bottom: 4px;">
+                                <%= device.accountName || '--' %>
+                            </div>
+                            <div style="font-weight: 600; color: #007bff; font-size: 14px; margin-top: 6px; padding-top: 6px; border-top: 1px solid #eee;">
+                                <%= device.availableAmount ? device.availableAmount.toLocaleString('vi-VN') : '0' %> VND
+                            </div>
                         </div>
-                        <div class="info-row">
-                            <span class="info-label">Group:</span>
-                            <span class="info-value"><%= device.group || 'N/A' %></span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">System:</span>
-                            <span class="info-value"><%= device.system_version || 'N/A' %></span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Status:</span>
-                            <span class="info-value"><%= device.status ? 'Online' : 'Offline' %></span>
-                        </div>
-                    </div>
-                    
-                    <form onsubmit="updateDevice(event, '<%= device.udid %>')">
-                        <div class="form-group">
-                            <label>Bank Code</label>
-                            <select name="bankCode" id="bank-<%= device.udid %>">
-                                <option value="">-- Select Bank --</option>
-                                <% banks.forEach(bank => { %>
-                                    <option value="<%= bank %>" <%= device.bankCode === bank ? 'selected' : '' %>>
-                                        <%= bank %>
-                                    </option>
-                                <% }); %>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Available Amount (VND)</label>
-                            <input 
-                                type="number" 
-                                name="availableAmount" 
-                                id="amount-<%= device.udid %>"
-                                value="<%= device.availableAmount || 0 %>"
-                                min="0"
-                                required
+                    </td>
+                    <td>
+                        <div class="action-menu">
+                            <button 
+                                type="button" 
+                                class="action-menu-btn"
+                                onclick="toggleActionMenu('<%= device.udid %>')"
                             >
+                                ⋮
+                            </button>
+                            <div class="action-menu-dropdown" id="menu-<%= device.udid %>">
+                                <button 
+                                    type="button" 
+                                    class="action-menu-item"
+                                    onclick="openEditModal('<%= device.udid %>'); closeActionMenu('<%= device.udid %>');"
+                                >
+                                    Edit
+                                </button>
+                                <% 
+                                    const toggleStatus = device.status === 'active' ? 'deactive' : 'active';
+                                    const toggleLabel = device.status === 'active' ? 'Deactive' : 'Active';
+                                    const toggleClass = device.status === 'active' ? 'btn-danger' : 'btn-success';
+                                %>
+                                <button 
+                                    type="button" 
+                                    class="action-menu-item <%= toggleClass %>"
+                                    onclick="toggleDeviceStatus('<%= device.udid %>', '<%= toggleStatus %>'); closeActionMenu('<%= device.udid %>');"
+                                    id="toggle-status-btn-<%= device.udid %>"
+                                >
+                                    <%= toggleLabel %>
+                                </button>
+                                <button 
+                                    type="button" 
+                                    class="action-menu-item btn-success"
+                                    onclick="retryLogin('<%= device.udid %>'); closeActionMenu('<%= device.udid %>');"
+                                    id="retry-btn-<%= device.udid %>"
+                                    <%= device.bankCode ? '' : 'disabled' %>
+                                >
+                                    Retry Login
+                                </button>
+                                <button 
+                                    type="button" 
+                                    class="action-menu-item btn-danger"
+                                    onclick="deleteConfig('<%= device.udid %>'); closeActionMenu('<%= device.udid %>');"
+                                >
+                                    Delete Config
+                                </button>
+                            </div>
                         </div>
-                        
+                    </td>
+                </tr>
+            <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Device Config</h2>
+                <span class="close" onclick="closeEditModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="editDeviceForm" onsubmit="submitEditForm(event)">
+                    <div class="form-group">
+                        <label>Bank Code</label>
+                        <select name="bankCode" id="modal-bank" required>
+                            <option value="">-- Select Bank --</option>
+                            <% banks.forEach(bank => { %>
+                                <option value="<%= bank %>"><%= bank %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Available Amount (VND)</label>
+                        <input 
+                            type="number" 
+                            name="availableAmount" 
+                            id="modal-amount"
+                            min="0"
+                            required
+                        >
+                    </div>
+                    
+                    <div id="password-fields">
                         <div class="form-group">
                             <label>Password</label>
                             <input 
                                 type="password" 
                                 name="password" 
-                                id="password-<%= device.udid %>"
-                                value="<%= device.password || '' %>"
+                                id="modal-password"
                                 placeholder="Enter password for bank login"
-                                required
                             >
                         </div>
                         
@@ -308,65 +717,163 @@
                             <input 
                                 type="text" 
                                 name="smartOTP" 
-                                id="smartOTP-<%= device.udid %>"
-                                value="<%= device.smartOTP || '' %>"
+                                id="modal-smartOTP"
                                 placeholder="Enter Smart OTP code"
-                                required
                             >
                         </div>
-                        
-                        <div class="form-group">
-                            <label>Account No</label>
-                            <input 
-                                type="text" 
-                                name="accountNo" 
-                                id="accountNo-<%= device.udid %>"
-                                value="<%= device.accountNo || '' %>"
-                                placeholder="Enter account number"
-                                required
-                            >
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Account Name</label>
-                            <input 
-                                type="text" 
-                                name="accountName" 
-                                id="accountName-<%= device.udid %>"
-                                value="<%= device.accountName || '' %>"
-                                placeholder="Enter account name"
-                                required
-                            >
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Device Status</label>
-                            <select name="status" id="status-<%= device.udid %>">
-                                <option value="deactive" <%= device.status === 'deactive' || !device.status ? 'selected' : '' %>>Deactive</option>
-                                <option value="active" <%= device.status === 'active' ? 'selected' : '' %>>Active</option>
-                            </select>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-save">Save Config</button>
-                    </form>
+                    </div>
                     
-                    <% if (device.status === 'active' && device.bankCode) { %>
-                        <button 
-                            type="button" 
-                            class="btn btn-success" 
-                            style="margin-top: 10px; width: 100%;"
-                            onclick="retryLogin('<%= device.udid %>')"
-                            id="retry-btn-<%= device.udid %>"
+                    <div class="form-group">
+                        <label>Account No</label>
+                        <input 
+                            type="text" 
+                            name="accountNo" 
+                            id="modal-accountNo"
+                            placeholder="Enter account number"
+                            required
                         >
-                            Retry Login
-                        </button>
-                    <% } %>
-                </div>
-            <% }); %>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Account Name</label>
+                        <input 
+                            type="text" 
+                            name="accountName" 
+                            id="modal-accountName"
+                            placeholder="Enter account name"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Device Status</label>
+                        <select name="status" id="modal-status" required>
+                            <option value="deactive">Deactive</option>
+                            <option value="active">Active</option>
+                        </select>
+                    </div>
+                    
+                    <div class="buttons-row">
+                        <button type="button" class="btn btn-danger" onclick="closeEditModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Create Device Modal -->
+    <div id="createModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Device Config</h2>
+                <span class="close" onclick="closeCreateModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="createDeviceForm" onsubmit="submitCreateForm(event)">
+                    <div class="form-group">
+                        <label>Device UDID</label>
+                        <select 
+                            name="deviceId" 
+                            id="create-deviceId-select"
+                            style="display: none;"
+                        >
+                            <option value="">-- Select Device --</option>
+                        </select>
+                        <input 
+                            type="text" 
+                            name="deviceId" 
+                            id="create-deviceId-input"
+                            placeholder="Enter device UDID"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Bank Code</label>
+                        <select name="bankCode" id="create-bank" required>
+                            <option value="">-- Select Bank --</option>
+                            <% banks.forEach(bank => { %>
+                                <option value="<%= bank %>"><%= bank %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Available Amount (VND)</label>
+                        <input 
+                            type="number" 
+                            name="availableAmount" 
+                            id="create-amount"
+                            min="0"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input 
+                            type="password" 
+                            name="password" 
+                            id="create-password"
+                            placeholder="Enter password for bank login"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Smart OTP</label>
+                        <input 
+                            type="text" 
+                            name="smartOTP" 
+                            id="create-smartOTP"
+                            placeholder="Enter Smart OTP code"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Account No</label>
+                        <input 
+                            type="text" 
+                            name="accountNo" 
+                            id="create-accountNo"
+                            placeholder="Enter account number"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Account Name</label>
+                        <input 
+                            type="text" 
+                            name="accountName" 
+                            id="create-accountName"
+                            placeholder="Enter account name"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Device Status</label>
+                        <select name="status" id="create-status" required>
+                            <option value="deactive">Deactive</option>
+                            <option value="active">Active</option>
+                        </select>
+                    </div>
+                    
+                    <div class="buttons-row">
+                        <button type="button" class="btn btn-danger" onclick="closeCreateModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     
     <script>
+        let currentDeviceId = null;
+        
         function showMessage(message, type = 'success') {
             const msgEl = document.getElementById('message');
             msgEl.textContent = message;
@@ -377,19 +884,263 @@
             }, 3000);
         }
         
-        async function updateDevice(event, deviceId) {
+        async function openEditModal(deviceId) {
+            currentDeviceId = deviceId;
+            const modal = document.getElementById('editModal');
+            
+            try {
+                // Fetch device config from API to get accurate status
+                const response = await fetch(`/api/devices/${deviceId}/config`);
+                const data = await response.json();
+                
+                if (data.success && data.data) {
+                    const config = data.data;
+                    
+                    // Populate modal form with API data
+                    document.getElementById('modal-bank').value = config.bankCode || '';
+                    document.getElementById('modal-amount').value = config.availableAmount || 0;
+                    document.getElementById('modal-accountNo').value = config.accountNo || '';
+                    document.getElementById('modal-accountName').value = config.accountName || '';
+                    document.getElementById('modal-status').value = config.status || 'deactive';
+                    
+                    // Check if device has existing config (has bankCode)
+                    const hasConfig = config.bankCode && config.bankCode !== '';
+                    const passwordFields = document.getElementById('password-fields');
+                    if (hasConfig) {
+                        passwordFields.style.display = 'none';
+                        document.getElementById('modal-password').value = '';
+                        document.getElementById('modal-smartOTP').value = '';
+                        document.getElementById('modal-password').required = false;
+                        document.getElementById('modal-smartOTP').required = false;
+                    } else {
+                        passwordFields.style.display = 'block';
+                        document.getElementById('modal-password').required = true;
+                        document.getElementById('modal-smartOTP').required = true;
+                    }
+                } else {
+                    // Fallback to DOM parsing if API fails
+                    // cells[0] = Device Name, cells[1] = Status, cells[2] = Bank Account, cells[3] = Actions
+                    const row = document.querySelector(`tr[data-device-id="${deviceId}"]`);
+                    if (row) {
+                        const cells = row.querySelectorAll('td');
+                        const statusCell = cells[1].querySelector('.device-status');
+                        const bankAccountCell = cells[2].querySelector('.editable-cell');
+                        
+                        const statusText = statusCell ? statusCell.textContent.trim() : 'DEACTIVE';
+                        const bankAccountDivs = bankAccountCell ? bankAccountCell.querySelectorAll('div') : [];
+                        const bankCode = bankAccountDivs.length > 0 ? bankAccountDivs[0].textContent.trim() : '';
+                        const accountNo = bankAccountDivs.length > 1 ? bankAccountDivs[1].textContent.trim() : '';
+                        const accountName = bankAccountDivs.length > 2 ? bankAccountDivs[2].textContent.trim() : '';
+                        const amountText = bankAccountDivs.length > 3 ? bankAccountDivs[3].textContent.trim() : '0 VND';
+                        
+                        document.getElementById('modal-bank').value = bankCode !== '-- Click to edit --' && bankCode !== '--' ? bankCode : '';
+                        document.getElementById('modal-amount').value = amountText ? parseFloat(amountText.replace(/[^\d]/g, '')) : 0;
+                        document.getElementById('modal-accountNo').value = accountNo !== '--' ? accountNo : '';
+                        document.getElementById('modal-accountName').value = accountName !== '--' ? accountName : '';
+                        document.getElementById('modal-status').value = statusText.includes('ACTIVE') ? 'active' : 'deactive';
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching device config:', error);
+                showMessage('Error loading device config', 'error');
+            }
+            
+            modal.classList.add('show');
+        }
+        
+        function closeEditModal() {
+            const modal = document.getElementById('editModal');
+            modal.classList.remove('show');
+            currentDeviceId = null;
+        }
+        
+        async function submitEditForm(event) {
             event.preventDefault();
             
-            const form = event.target;
-            const bankCode = document.getElementById(`bank-${deviceId}`).value.trim();
-            const availableAmount = parseFloat(document.getElementById(`amount-${deviceId}`).value);
-            const password = document.getElementById(`password-${deviceId}`).value.trim();
-            const smartOTP = document.getElementById(`smartOTP-${deviceId}`).value.trim();
-            const accountNo = document.getElementById(`accountNo-${deviceId}`).value.trim();
-            const accountName = document.getElementById(`accountName-${deviceId}`).value.trim();
-            const status = document.getElementById(`status-${deviceId}`).value;
+            if (!currentDeviceId) return;
             
-            // Frontend validation: if status is 'active', all fields are required
+            const bankCode = document.getElementById('modal-bank').value.trim();
+            const availableAmount = parseFloat(document.getElementById('modal-amount').value);
+            const password = document.getElementById('modal-password').value.trim();
+            const smartOTP = document.getElementById('modal-smartOTP').value.trim();
+            const accountNo = document.getElementById('modal-accountNo').value.trim();
+            const accountName = document.getElementById('modal-accountName').value.trim();
+            const status = document.getElementById('modal-status').value;
+            
+            const hasExistingConfig = !document.getElementById('password-fields').style.display || document.getElementById('password-fields').style.display === 'none';
+            
+            // Validation
+            if (status === 'active') {
+                const errors = [];
+                
+                if (!bankCode || bankCode === '') {
+                    errors.push('Bank Code là bắt buộc khi status là active');
+                }
+                
+                if (isNaN(availableAmount) || availableAmount < 0) {
+                    errors.push('Available Amount là bắt buộc và phải >= 0 khi status là active');
+                }
+                
+                if (!hasExistingConfig) {
+                    if (!password || password === '') {
+                        errors.push('Password là bắt buộc khi status là active');
+                    }
+                    
+                    if (!smartOTP || smartOTP === '') {
+                        errors.push('Smart OTP là bắt buộc khi status là active');
+                    }
+                }
+                
+                if (!accountNo || accountNo === '') {
+                    errors.push('Account No là bắt buộc khi status là active');
+                }
+                
+                if (!accountName || accountName === '') {
+                    errors.push('Account Name là bắt buộc khi status là active');
+                }
+                
+                if (errors.length > 0) {
+                    showMessage(errors.join(', '), 'error');
+                    return;
+                }
+            }
+            
+            try {
+                const requestBody = {
+                    bankCode: bankCode || undefined,
+                    availableAmount: availableAmount || 0,
+                    accountNo: accountNo || undefined,
+                    accountName: accountName || undefined,
+                    status: status || 'deactive',
+                };
+                
+                if (!hasExistingConfig) {
+                    requestBody.password = password || undefined;
+                    requestBody.smartOTP = smartOTP || undefined;
+                }
+                
+                const response = await fetch(`/api/devices/${currentDeviceId}/config`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody),
+                });
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP ${response.status}: ${errorText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showMessage('Device config updated successfully!', 'success');
+                    closeEditModal();
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
+                } else {
+                    const errorMsg = data.error || 'Failed to update device config';
+                    showMessage(errorMsg, 'error');
+                }
+            } catch (error) {
+                console.error('Update device error:', error);
+                showMessage('Error updating device config: ' + (error.message || error), 'error');
+            }
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const editModal = document.getElementById('editModal');
+            const createModal = document.getElementById('createModal');
+            if (event.target === editModal) {
+                closeEditModal();
+            }
+            if (event.target === createModal) {
+                closeCreateModal();
+            }
+        }
+        
+        async function openCreateModal() {
+            const modal = document.getElementById('createModal');
+            // Reset form
+            document.getElementById('createDeviceForm').reset();
+            
+            // Try to fetch available devices
+            try {
+                const response = await fetch('/api/devices');
+                const data = await response.json();
+                
+                if (data.success && data.data && data.data.length > 0) {
+                    // Filter devices that don't have config yet
+                    const availableDevices = data.data.filter(device => !device.bankCode);
+                    
+                    const selectEl = document.getElementById('create-deviceId-select');
+                    const inputEl = document.getElementById('create-deviceId-input');
+                    
+                    if (availableDevices.length > 0) {
+                        // Show dropdown and populate with devices
+                        selectEl.innerHTML = '<option value="">-- Select Device --</option>';
+                        availableDevices.forEach(device => {
+                            const option = document.createElement('option');
+                            option.value = device.udid;
+                            option.textContent = `${device.name || device.udid} (${device.udid.substring(0, 20)}...)`;
+                            selectEl.appendChild(option);
+                        });
+                        selectEl.style.display = 'block';
+                        selectEl.required = true;
+                        inputEl.style.display = 'none';
+                        inputEl.required = false;
+                    } else {
+                        // No available devices, show input
+                        selectEl.style.display = 'none';
+                        selectEl.required = false;
+                        inputEl.style.display = 'block';
+                        inputEl.required = true;
+                    }
+                } else {
+                    // Failed to fetch or no devices, show input
+                    const selectEl = document.getElementById('create-deviceId-select');
+                    const inputEl = document.getElementById('create-deviceId-input');
+                    selectEl.style.display = 'none';
+                    selectEl.required = false;
+                    inputEl.style.display = 'block';
+                    inputEl.required = true;
+                }
+            } catch (error) {
+                // Error fetching devices, show input
+                const selectEl = document.getElementById('create-deviceId-select');
+                const inputEl = document.getElementById('create-deviceId-input');
+                selectEl.style.display = 'none';
+                selectEl.required = false;
+                inputEl.style.display = 'block';
+                inputEl.required = true;
+            }
+            
+            modal.classList.add('show');
+        }
+        
+        function closeCreateModal() {
+            const modal = document.getElementById('createModal');
+            modal.classList.remove('show');
+        }
+        
+        async function submitCreateForm(event) {
+            event.preventDefault();
+            
+            const selectEl = document.getElementById('create-deviceId-select');
+            const inputEl = document.getElementById('create-deviceId-input');
+            const deviceId = (selectEl.style.display !== 'none' ? selectEl.value : inputEl.value).trim();
+            const bankCode = document.getElementById('create-bank').value.trim();
+            const availableAmount = parseFloat(document.getElementById('create-amount').value);
+            const password = document.getElementById('create-password').value.trim();
+            const smartOTP = document.getElementById('create-smartOTP').value.trim();
+            const accountNo = document.getElementById('create-accountNo').value.trim();
+            const accountName = document.getElementById('create-accountName').value.trim();
+            const status = document.getElementById('create-status').value;
+            
+            // Validation
             if (status === 'active') {
                 const errors = [];
                 
@@ -424,20 +1175,161 @@
             }
             
             try {
+                const requestBody = {
+                    bankCode: bankCode || undefined,
+                    availableAmount: availableAmount || 0,
+                    password: password || undefined,
+                    smartOTP: smartOTP || undefined,
+                    accountNo: accountNo || undefined,
+                    accountName: accountName || undefined,
+                    status: status || 'deactive',
+                };
+                
                 const response = await fetch(`/api/devices/${deviceId}/config`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({
-                        bankCode: bankCode || undefined,
-                        availableAmount: availableAmount || 0,
-                        password: password || undefined,
-                        smartOTP: smartOTP || undefined,
-                        accountNo: accountNo || undefined,
-                        accountName: accountName || undefined,
-                        status: status || 'deactive',
-                    }),
+                    body: JSON.stringify(requestBody),
+                });
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP ${response.status}: ${errorText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showMessage('Device config created successfully!', 'success');
+                    closeCreateModal();
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
+                } else {
+                    const errorMsg = data.error || 'Failed to create device config';
+                    showMessage(errorMsg, 'error');
+                }
+            } catch (error) {
+                console.error('Create device error:', error);
+                showMessage('Error creating device config: ' + (error.message || error), 'error');
+            }
+        }
+        
+        function toggleActionMenu(deviceId) {
+            const menu = document.getElementById(`menu-${deviceId}`);
+            const isOpen = menu.classList.contains('show');
+            
+            // Close all other menus
+            document.querySelectorAll('.action-menu-dropdown.show').forEach(m => {
+                if (m.id !== `menu-${deviceId}`) {
+                    m.classList.remove('show');
+                }
+            });
+            
+            // Toggle current menu
+            if (isOpen) {
+                menu.classList.remove('show');
+            } else {
+                menu.classList.add('show');
+            }
+        }
+        
+        function closeActionMenu(deviceId) {
+            const menu = document.getElementById(`menu-${deviceId}`);
+            menu.classList.remove('show');
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.action-menu')) {
+                document.querySelectorAll('.action-menu-dropdown.show').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+        });
+        
+        function submitDeviceForm(deviceId) {
+            const fakeEvent = { preventDefault: () => {} };
+            updateDevice(fakeEvent, deviceId);
+        }
+        
+        async function updateDevice(event, deviceId) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            const bankCode = document.getElementById(`bank-${deviceId}`).value.trim();
+            const availableAmount = parseFloat(document.getElementById(`amount-${deviceId}`).value);
+            const passwordEl = document.getElementById(`password-${deviceId}`);
+            const password = passwordEl ? passwordEl.value.trim() : '';
+            const smartOTPEl = document.getElementById(`smartOTP-${deviceId}`);
+            const smartOTP = smartOTPEl ? smartOTPEl.value.trim() : '';
+            const accountNo = document.getElementById(`accountNo-${deviceId}`).value.trim();
+            const accountName = document.getElementById(`accountName-${deviceId}`).value.trim();
+            const status = document.getElementById(`status-${deviceId}`).value;
+            
+            // Check if device already has config (password field doesn't exist)
+            const hasExistingConfig = !passwordEl;
+            
+            // Frontend validation: if status is 'active', all fields are required
+            // However, password and smartOTP are not required if device already has config (input not exists)
+            if (status === 'active') {
+                const errors = [];
+                
+                if (!bankCode || bankCode === '') {
+                    errors.push('Bank Code là bắt buộc khi status là active');
+                }
+                
+                if (isNaN(availableAmount) || availableAmount < 0) {
+                    errors.push('Available Amount là bắt buộc và phải >= 0 khi status là active');
+                }
+                
+                // Password and smartOTP are only required if device doesn't have existing config (input exists)
+                if (!hasExistingConfig) {
+                    if (!password || password === '') {
+                        errors.push('Password là bắt buộc khi status là active');
+                    }
+                    
+                    if (!smartOTP || smartOTP === '') {
+                        errors.push('Smart OTP là bắt buộc khi status là active');
+                    }
+                }
+                
+                if (!accountNo || accountNo === '') {
+                    errors.push('Account No là bắt buộc khi status là active');
+                }
+                
+                if (!accountName || accountName === '') {
+                    errors.push('Account Name là bắt buộc khi status là active');
+                }
+                
+                if (errors.length > 0) {
+                    showMessage(errors.join(', '), 'error');
+                    return;
+                }
+            }
+            
+            try {
+                const requestBody = {
+                    bankCode: bankCode || undefined,
+                    availableAmount: availableAmount || 0,
+                    accountNo: accountNo || undefined,
+                    accountName: accountName || undefined,
+                    status: status || 'deactive',
+                };
+                
+                // Only include password and smartOTP if device doesn't have existing config
+                if (!hasExistingConfig) {
+                    requestBody.password = password || undefined;
+                    requestBody.smartOTP = smartOTP || undefined;
+                }
+                
+                const response = await fetch(`/api/devices/${deviceId}/config`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody),
                 });
                 
                 if (!response.ok) {
@@ -449,15 +1341,10 @@
                 
                 if (data.success) {
                     showMessage('Device config updated successfully!', 'success');
-                    // Update UI
-                    const card = document.querySelector(`[data-device-id="${deviceId}"]`);
-                    if (card) {
-                        const statusBadge = card.querySelector('.device-status');
-                        if (statusBadge) {
-                            statusBadge.className = `device-status ${status === 'active' ? 'status-green' : 'status-red'}`;
-                            statusBadge.textContent = status === 'active' ? 'ACTIVE' : 'DEACTIVE';
-                        }
-                    }
+                    // Reload page after a short delay to reflect changes
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
                 } else {
                     const errorMsg = data.error || 'Failed to update device config';
                     showMessage(errorMsg, 'error');
@@ -465,6 +1352,82 @@
             } catch (error) {
                 console.error('Update device error:', error);
                 showMessage('Error updating device config: ' + (error.message || error), 'error');
+            }
+        }
+        
+        async function toggleDeviceStatus(deviceId, newStatus) {
+            try {
+                // Get current device config to preserve other fields
+                const configResponse = await fetch(`/api/devices/${deviceId}/config`);
+                const configData = await configResponse.json();
+                
+                if (!configData.success || !configData.data) {
+                    throw new Error('Failed to get device config');
+                }
+                
+                const currentConfig = configData.data;
+                
+                // Update only the status
+                const requestBody = {
+                    bankCode: currentConfig.bankCode,
+                    availableAmount: currentConfig.availableAmount,
+                    accountNo: currentConfig.accountNo,
+                    accountName: currentConfig.accountName,
+                    status: newStatus,
+                };
+                
+                const response = await fetch(`/api/devices/${deviceId}/config`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody),
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `HTTP ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Update UI immediately without reload
+                    const row = document.querySelector(`tr[data-device-id="${deviceId}"]`);
+                    if (row) {
+                        // Update status badge in status column (cells[1])
+                        const cells = row.querySelectorAll('td');
+                        const statusBadge = cells[1] ? cells[1].querySelector('.device-status') : null;
+                        if (statusBadge) {
+                            statusBadge.textContent = newStatus === 'active' ? 'ACTIVE' : 'DEACTIVE';
+                            // Remove old status classes and add new one
+                            statusBadge.classList.remove('status-green', 'status-red');
+                            statusBadge.classList.add(newStatus === 'active' ? 'status-green' : 'status-red');
+                        }
+                        
+                        // Update toggle button in dropdown menu
+                        const toggleBtn = document.getElementById(`toggle-status-btn-${deviceId}`);
+                        if (toggleBtn) {
+                            const nextStatus = newStatus === 'active' ? 'deactive' : 'active';
+                            const nextLabel = newStatus === 'active' ? 'Deactive' : 'Active';
+                            const nextClass = newStatus === 'active' ? 'btn-danger' : 'btn-success';
+                            
+                            toggleBtn.textContent = nextLabel;
+                            // Remove old button classes and add new one
+                            toggleBtn.classList.remove('btn-danger', 'btn-success');
+                            toggleBtn.classList.add(nextClass);
+                            toggleBtn.setAttribute('onclick', `toggleDeviceStatus('${deviceId}', '${nextStatus}'); closeActionMenu('${deviceId}');`);
+                        }
+                    }
+                    
+                    showMessage(`Device status updated to ${newStatus} successfully!`, 'success');
+                } else {
+                    const errorMsg = data.error || 'Failed to update device status';
+                    showMessage(errorMsg, 'error');
+                }
+            } catch (error) {
+                console.error('Toggle device status error:', error);
+                showMessage('Error updating device status: ' + (error.message || error), 'error');
             }
         }
         
@@ -554,6 +1517,42 @@
                 btn.disabled = false;
                 btn.textContent = originalText;
                 btn.style.opacity = '1';
+            }
+        }
+        
+        async function deleteConfig(deviceId) {
+            // Show browser's default confirm dialog
+            const confirmed = confirm('Bạn có chắc chắn muốn xóa config của device này?');
+            
+            if (!confirmed) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/api/devices/${deviceId}/config`, {
+                    method: 'DELETE',
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    const errorMsg = data.error || 'Failed to delete config';
+                    showMessage(errorMsg, 'error');
+                    return;
+                }
+                
+                if (data.success) {
+                    showMessage('Config deleted successfully!', 'success');
+                    // Reload page after a short delay to reflect changes
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
+                } else {
+                    const errorMsg = data.error || 'Failed to delete config';
+                    showMessage(errorMsg, 'error');
+                }
+            } catch (error) {
+                showMessage('Error deleting config: ' + (error.message || error), 'error');
             }
         }
     </script>

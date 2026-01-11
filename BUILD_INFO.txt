@@ -1,4 +1,4 @@
-SOURCE_SHA=4fe3741
-Message=Merge pull request #14 from ezzpay/feat/restart-panda-software
+SOURCE_SHA=8737f22
+Message=Merge pull request #15 from ezzpay/feat/edit-UI-box
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-12T02:44:50+0700
+BUILD_TIME_UTC+7=2026-01-12T05:00:00+0700
