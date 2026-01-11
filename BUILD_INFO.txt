@@ -1,4 +1,4 @@
-SOURCE_SHA=179812c
-Message=fix: get all devices from panda with retry
-TAG_OR_REF=feat/restart-panda-software
-BUILD_TIME_UTC+7=2026-01-12T02:32:44+0700
+SOURCE_SHA=4fe3741
+Message=Merge pull request #14 from ezzpay/feat/restart-panda-software
+TAG_OR_REF=main
+BUILD_TIME_UTC+7=2026-01-12T02:44:50+0700
