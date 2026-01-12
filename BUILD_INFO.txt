@@ -1,4 +1,4 @@
-SOURCE_SHA=e79d27f
-Message=Merge pull request #16 from ezzpay/fix/handle-witdrawal-status-when-having-error
+SOURCE_SHA=c755c05
+Message=Merge pull request #17 from ezzpay/feat/refactor-pick-job
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-12T16:39:51+0700
+BUILD_TIME_UTC+7=2026-01-12T20:44:34+0700
