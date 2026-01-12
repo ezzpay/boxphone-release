@@ -1,4 +1,4 @@
-SOURCE_SHA=b17c3ce
-Message=fix: notify devices disconnected
+SOURCE_SHA=2f988bb
+Message=feat: check withdrawal status before pick job
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-12T05:07:09+0700
+BUILD_TIME_UTC+7=2026-01-12T13:31:00+0700
