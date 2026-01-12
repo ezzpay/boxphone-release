@@ -1,4 +1,4 @@
-SOURCE_SHA=c755c05
-Message=Merge pull request #17 from ezzpay/feat/refactor-pick-job
+SOURCE_SHA=216cfb7
+Message=Merge pull request #18 from ezzpay/fix/edit-pg-roi
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-12T20:44:34+0700
+BUILD_TIME_UTC+7=2026-01-13T03:06:40+0700
