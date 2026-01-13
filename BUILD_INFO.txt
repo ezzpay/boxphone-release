@@ -1,4 +1,4 @@
-SOURCE_SHA=cb78e71
-Message=fix: ocr preprocessor
+SOURCE_SHA=df1972a
+Message=fix for hd
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-13T12:31:05+0700
+BUILD_TIME_UTC+7=2026-01-13T17:09:16+0700
