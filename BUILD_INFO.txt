@@ -1,4 +1,4 @@
-SOURCE_SHA=cda6ca3
-Message=sleep 2s after capture bill for HDBank
+SOURCE_SHA=abc4600
+Message=feat: pick job based on priority
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-14T01:42:50+0700
+BUILD_TIME_UTC+7=2026-01-14T05:27:38+0700
