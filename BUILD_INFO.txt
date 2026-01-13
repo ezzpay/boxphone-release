@@ -1,4 +1,4 @@
-SOURCE_SHA=66052eb
-Message=fix: comment test vcb
+SOURCE_SHA=3c797f7
+Message=sleep after swipe phone
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-13T11:44:52+0700
+BUILD_TIME_UTC+7=2026-01-13T12:20:37+0700
