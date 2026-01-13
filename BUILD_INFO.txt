@@ -1,4 +1,4 @@
-SOURCE_SHA=617d0c5
-Message=Fix: capture bill
+SOURCE_SHA=217ef3e
+Message=sleep 2s after capture bill for HDBank
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-13T23:55:14+0700
+BUILD_TIME_UTC+7=2026-01-14T00:32:02+0700
