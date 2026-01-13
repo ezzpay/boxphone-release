@@ -1,4 +1,4 @@
-SOURCE_SHA=216cfb7
-Message=Merge pull request #18 from ezzpay/fix/edit-pg-roi
+SOURCE_SHA=9e4a26e
+Message=fix swipe for HDbank
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-13T03:06:40+0700
+BUILD_TIME_UTC+7=2026-01-13T11:01:56+0700
