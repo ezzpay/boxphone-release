@@ -1,4 +1,4 @@
-SOURCE_SHA=9709270
-Message=fix: analyze no bill after otp not force login
+SOURCE_SHA=617d0c5
+Message=Fix: capture bill
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-13T23:51:58+0700
+BUILD_TIME_UTC+7=2026-01-13T23:55:14+0700
