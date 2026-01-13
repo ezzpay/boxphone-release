@@ -1,4 +1,4 @@
-SOURCE_SHA=086f09d
-Message=Fix: transfer HD bank
+SOURCE_SHA=b64f770
+Message=fix: delay after bill
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-13T22:12:33+0700
+BUILD_TIME_UTC+7=2026-01-13T23:05:22+0700
