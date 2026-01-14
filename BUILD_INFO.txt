@@ -1,4 +1,4 @@
-SOURCE_SHA=4997a58
-Message=fix: hd bank bill and otp switch case
+SOURCE_SHA=01c83ba
+Message=feat: notify telegram withdrawal
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-14T18:28:04+0700
+BUILD_TIME_UTC+7=2026-01-14T19:25:09+0700
