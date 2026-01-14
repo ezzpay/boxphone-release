@@ -1,4 +1,4 @@
-SOURCE_SHA=01c83ba
-Message=feat: notify telegram withdrawal
+SOURCE_SHA=8ef1fc5
+Message=fix: PG select qr
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-14T19:25:09+0700
+BUILD_TIME_UTC+7=2026-01-14T21:53:27+0700
