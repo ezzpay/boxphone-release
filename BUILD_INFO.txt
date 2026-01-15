@@ -1,4 +1,4 @@
-SOURCE_SHA=683a176
-Message=fix: time reset
+SOURCE_SHA=7d1230c
+Message=fix: cron reset panda
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-15T09:53:15+0700
+BUILD_TIME_UTC+7=2026-01-15T15:17:18+0700
