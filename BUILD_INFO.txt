@@ -1,4 +1,4 @@
-SOURCE_SHA=7d1230c
-Message=fix: cron reset panda
+SOURCE_SHA=7787c5c
+Message=Merge pull request #20 from ezzpay/fix/update-withdrawal
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-15T15:17:18+0700
+BUILD_TIME_UTC+7=2026-01-16T01:13:29+0700
