@@ -1,4 +1,4 @@
-SOURCE_SHA=15b06d7
-Message=chore: add gitignore for boxphone release
+SOURCE_SHA=52fbd5a
+Message=chore: add gitignore for boxphone release #2
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-16T04:44:36+0700
+BUILD_TIME_UTC+7=2026-01-16T04:46:22+0700
