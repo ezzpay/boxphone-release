@@ -1,4 +1,4 @@
-SOURCE_SHA=75053b1
-Message=fix: unknown error #2
+SOURCE_SHA=e35c22f
+Message=fix: log with devicecConfig.accountName
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-16T01:19:39+0700
+BUILD_TIME_UTC+7=2026-01-16T02:21:43+0700
