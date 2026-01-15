@@ -1,4 +1,4 @@
-SOURCE_SHA=53bb130
-Message=fix: bug PG go back to home screen
+SOURCE_SHA=1957d3a
+Message=fix: force login and requeue
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-16T03:36:34+0700
+BUILD_TIME_UTC+7=2026-01-16T04:08:05+0700
