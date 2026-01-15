@@ -1,4 +1,4 @@
-SOURCE_SHA=184419e
-Message=fix: force login after retry failed
+SOURCE_SHA=15b06d7
+Message=chore: add gitignore for boxphone release
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-16T04:35:55+0700
+BUILD_TIME_UTC+7=2026-01-16T04:44:36+0700
