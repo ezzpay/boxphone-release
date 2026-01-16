@@ -1,4 +1,4 @@
-SOURCE_SHA=52fbd5a
-Message=chore: add gitignore for boxphone release #2
+SOURCE_SHA=49d03cd
+Message=fix: pg verify account roi
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-16T04:46:22+0700
+BUILD_TIME_UTC+7=2026-01-16T12:16:49+0700
