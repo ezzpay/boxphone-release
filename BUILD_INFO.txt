@@ -1,4 +1,4 @@
-SOURCE_SHA=95f56fb
-Message=fix: pg verify account roi #2
+SOURCE_SHA=1aa26c2
+Message=fix build with CI
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-16T12:18:39+0700
+BUILD_TIME_UTC+7=2026-01-16T12:27:48+0700
