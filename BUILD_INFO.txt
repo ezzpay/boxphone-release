@@ -1,4 +1,4 @@
-SOURCE_SHA=c711e66
-Message=fix: update receipt after failed
+SOURCE_SHA=fa8666c
+Message=Fix: send image of screen when failed
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-16T20:05:57+0700
+BUILD_TIME_UTC+7=2026-01-17T20:33:35+0700
