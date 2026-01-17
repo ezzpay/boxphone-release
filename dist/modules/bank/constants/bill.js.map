@@ -1,0 +1,1 @@
+{"version":3,"file":"bill.js","sourceRoot":"","sources":["../../../../src/modules/bank/constants/bill.ts"],"names":[],"mappings":";;;AAAa,QAAA,qBAAqB,GAAG,CAAC,MAAM,CAAC,CAAC;AAEvC,MAAM,WAAW,GAAG,CAAC,GAAW,EAAU,EAAE;IACjD,MAAM,SAAS,GAA2B;QACxC,MAAM,EAAE,WAAW;KACpB,CAAC;IACF,OAAO,SAAS,CAAC,GAAG,CAAC,WAAW,EAAE,CAAC,IAAI,WAAW,CAAC;AACrD,CAAC,CAAA;AALY,QAAA,WAAW,eAKvB"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"window-app.module.js","sourceRoot":"","sources":["../../../src/modules/window-app/window-app.module.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAAwC;AACxC,6DAAgE;AAQzD,IAAM,eAAe,GAArB,MAAM,eAAe;CAAG,CAAA;AAAlB,0CAAe;0BAAf,eAAe;IAN3B,IAAA,eAAM,EAAC;QACN,SAAS,EAAE;YACT,6CAAwB;SACzB;QACD,OAAO,EAAE,CAAC,6CAAwB,CAAC;KACpC,CAAC;GACW,eAAe,CAAG"}

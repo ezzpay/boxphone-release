@@ -1,4 +1,4 @@
-SOURCE_SHA=fa8666c
-Message=Fix: send image of screen when failed
+SOURCE_SHA=77975c4
+Message=Fix: Notify wda failed
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-17T20:33:35+0700
+BUILD_TIME_UTC+7=2026-01-17T21:20:19+0700
