@@ -1,4 +1,4 @@
-SOURCE_SHA=3090e1d
-Message=Fix: hd failed screen
+SOURCE_SHA=b1b76da
+Message=fix: hd roi
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-17T21:58:37+0700
+BUILD_TIME_UTC+7=2026-01-18T22:57:30+0700
