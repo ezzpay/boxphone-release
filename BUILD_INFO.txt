@@ -1,4 +1,4 @@
-SOURCE_SHA=9664c4a
-Message=HD internal transfer
+SOURCE_SHA=dc07d24
+Message=fix: hd internal
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-19T02:17:12+0700
+BUILD_TIME_UTC+7=2026-01-19T10:56:48+0700
