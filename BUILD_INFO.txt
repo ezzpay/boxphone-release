@@ -1,4 +1,4 @@
-SOURCE_SHA=dc07d24
-Message=fix: hd internal
+SOURCE_SHA=c6ab29e
+Message=Fix: HD otp detect
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-19T10:56:48+0700
+BUILD_TIME_UTC+7=2026-01-19T18:37:18+0700
