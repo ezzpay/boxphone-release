@@ -1,4 +1,4 @@
-SOURCE_SHA=c6ae279
-Message=fix: hd without otp
+SOURCE_SHA=e829543
+Message=fix: hd mat khau khong dung
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-19T19:06:57+0700
+BUILD_TIME_UTC+7=2026-01-20T00:01:22+0700
