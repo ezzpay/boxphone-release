@@ -1,4 +1,4 @@
-SOURCE_SHA=cd7ec92
+SOURCE_SHA=e6215fe
 Message=feat: fork cash flow
 TAG_OR_REF=feat/fork-cash-flow
-BUILD_TIME_UTC+7=2026-01-21T03:20:54+0700
+BUILD_TIME_UTC+7=2026-01-21T03:25:17+0700
