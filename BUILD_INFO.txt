@@ -1,4 +1,4 @@
-SOURCE_SHA=ea1394d
-Message=Fix: deactivate device amount under 5M
-TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-21T01:44:56+0700
+SOURCE_SHA=cd7ec92
+Message=feat: fork cash flow
+TAG_OR_REF=feat/fork-cash-flow
+BUILD_TIME_UTC+7=2026-01-21T03:20:54+0700
