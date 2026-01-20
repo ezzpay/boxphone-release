@@ -1,4 +1,4 @@
-SOURCE_SHA=e829543
-Message=fix: hd mat khau khong dung
+SOURCE_SHA=fed1e07
+Message=fix: ocr with vie+eng
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-20T00:01:22+0700
+BUILD_TIME_UTC+7=2026-01-20T11:48:48+0700
