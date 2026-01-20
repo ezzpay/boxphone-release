@@ -1,4 +1,4 @@
-SOURCE_SHA=66d09a5
-Message=Fix: return home after bill
+SOURCE_SHA=ea1394d
+Message=Fix: deactivate device amount under 5M
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-20T18:46:18+0700
+BUILD_TIME_UTC+7=2026-01-21T01:44:56+0700
