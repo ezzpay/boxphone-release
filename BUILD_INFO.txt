@@ -1,4 +1,4 @@
-SOURCE_SHA=588406f
-Message=fix: hd delay between transaction
+SOURCE_SHA=66d09a5
+Message=Fix: return home after bill
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-20T15:14:11+0700
+BUILD_TIME_UTC+7=2026-01-20T18:46:18+0700
