@@ -1,4 +1,4 @@
-SOURCE_SHA=0dd8eb6
-Message=Merge branch 'main' into feat/get-balance
-TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-21T13:00:51+0700
+SOURCE_SHA=266483a
+Message=feat: fork cash flow
+TAG_OR_REF=feat/fork-cash-flow
+BUILD_TIME_UTC+7=2026-01-21T21:53:25+0700
