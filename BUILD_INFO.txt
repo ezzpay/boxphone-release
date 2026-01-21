@@ -1,4 +1,4 @@
-SOURCE_SHA=37f2ab6
+SOURCE_SHA=e6bd4ec
 Message=fix: clear box socket event
 TAG_OR_REF=feat/fork-cash-flow
-BUILD_TIME_UTC+7=2026-01-21T11:07:33+0700
+BUILD_TIME_UTC+7=2026-01-21T11:15:40+0700
