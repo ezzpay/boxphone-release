@@ -1,4 +1,4 @@
-SOURCE_SHA=a975564
-Message=feat: fork cash flow
-TAG_OR_REF=feat/fork-cash-flow
-BUILD_TIME_UTC+7=2026-01-23T01:45:10+0700
+SOURCE_SHA=0b84623
+Message=Merge pull request #21 from ezzpay/feat/fork-cash-flow
+TAG_OR_REF=main
+BUILD_TIME_UTC+7=2026-01-23T03:20:41+0700
