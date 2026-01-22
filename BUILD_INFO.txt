@@ -1,4 +1,4 @@
-SOURCE_SHA=1d9b1e1
-Message=fix: wrong otp #2
+SOURCE_SHA=42acc33
+Message=fix: try with error image
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-22T16:42:57+0700
+BUILD_TIME_UTC+7=2026-01-23T01:20:00+0700
