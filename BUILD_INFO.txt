@@ -1,4 +1,4 @@
-SOURCE_SHA=1144665
-Message=Merge pull request #22 from ezzpay/fix/close-wrong-otp-pop
+SOURCE_SHA=1d9b1e1
+Message=fix: wrong otp #2
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-22T15:47:48+0700
+BUILD_TIME_UTC+7=2026-01-22T16:42:57+0700
