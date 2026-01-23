@@ -1,4 +1,4 @@
-SOURCE_SHA=7c86fcb
-Message=fix: delay when launch app
+SOURCE_SHA=d859127
+Message=Fix: get wrong bill when retry
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-23T14:22:46+0700
+BUILD_TIME_UTC+7=2026-01-23T18:06:38+0700
