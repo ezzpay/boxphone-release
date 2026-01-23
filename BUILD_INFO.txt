@@ -1,4 +1,4 @@
-SOURCE_SHA=d859127
-Message=Fix: get wrong bill when retry
+SOURCE_SHA=35b6a74
+Message=fix: reset panda even system pause processing
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-23T18:06:38+0700
+BUILD_TIME_UTC+7=2026-01-24T01:05:59+0700
