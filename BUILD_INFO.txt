@@ -1,4 +1,4 @@
-SOURCE_SHA=35b6a74
-Message=fix: reset panda even system pause processing
-TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-24T01:05:59+0700
+SOURCE_SHA=8c741b1
+Message=feat: enable different min amount device
+TAG_OR_REF=feat/enable-different-min-amount-device
+BUILD_TIME_UTC+7=2026-01-24T04:31:10+0700
