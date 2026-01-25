@@ -1,4 +1,4 @@
-SOURCE_SHA=8c741b1
-Message=feat: enable different min amount device
-TAG_OR_REF=feat/enable-different-min-amount-device
-BUILD_TIME_UTC+7=2026-01-24T04:31:10+0700
+SOURCE_SHA=5d07a9b
+Message=Merge pull request #23 from ezzpay/feat/enable-different-min-amount-device
+TAG_OR_REF=main
+BUILD_TIME_UTC+7=2026-01-25T09:17:25+0700
