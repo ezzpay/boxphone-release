@@ -1,4 +1,4 @@
-SOURCE_SHA=1f2e200
-Message=fix: reset panda
+SOURCE_SHA=4883149
+Message=fix: reset panda every 40 minutes
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-25T09:22:18+0700
+BUILD_TIME_UTC+7=2026-01-25T17:36:22+0700
