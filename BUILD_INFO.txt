@@ -1,4 +1,4 @@
-SOURCE_SHA=5d07a9b
-Message=Merge pull request #23 from ezzpay/feat/enable-different-min-amount-device
+SOURCE_SHA=1f2e200
+Message=fix: reset panda
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-25T09:17:25+0700
+BUILD_TIME_UTC+7=2026-01-25T09:22:18+0700
