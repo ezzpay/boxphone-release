@@ -1,4 +1,4 @@
-SOURCE_SHA=4883149
-Message=fix: reset panda every 40 minutes
+SOURCE_SHA=92991cc
+Message=fix: HD force login after each transaction
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-25T17:36:22+0700
+BUILD_TIME_UTC+7=2026-01-26T19:14:10+0700
