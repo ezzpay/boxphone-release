@@ -1,4 +1,4 @@
-SOURCE_SHA=92991cc
-Message=fix: HD force login after each transaction
+SOURCE_SHA=3ce7813
+Message=fix: HD force login after each transaction #2
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-26T19:14:10+0700
+BUILD_TIME_UTC+7=2026-01-26T19:25:08+0700
