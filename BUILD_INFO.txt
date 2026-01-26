@@ -1,4 +1,4 @@
-SOURCE_SHA=3ce7813
-Message=fix: HD force login after each transaction #2
+SOURCE_SHA=a6ddb52
+Message=Get balance for HDbank
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-26T19:25:08+0700
+BUILD_TIME_UTC+7=2026-01-27T02:14:12+0700
