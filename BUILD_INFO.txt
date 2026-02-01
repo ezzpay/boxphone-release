@@ -1,4 +1,4 @@
-SOURCE_SHA=7ef011e
-Message=fix: panda reset 1h
+SOURCE_SHA=678c6f4
+Message=feat: integrate panda android
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-01-28T16:13:49+0700
+BUILD_TIME_UTC+7=2026-02-02T01:49:01+0700
