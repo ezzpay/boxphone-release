@@ -540,6 +540,23 @@
 		.modal-body {
 			margin-bottom: 20px;
 		}
+
+		.transfer-type-badge {
+			padding: 2px 8px;
+			border-radius: 4px;
+			font-weight: 600;
+			font-size: 12px;
+		}
+
+		.transfer-type-in {
+			background: #d4edda;
+			color: #155724;
+		}
+
+		.transfer-type-out {
+			background: #fff3cd;
+			color: #856404;
+		}
 	</style>
 </head>
 
@@ -617,12 +634,17 @@
 								<div
 									class="editable-cell <%= (!device.bankCode && !device.accountNo && !device.accountName) ? 'empty' : '' %>"
 									onclick="openEditModal('<%= device.udid %>')">
-									<div style="font-weight: 600; margin-bottom: 4px;">
-										<%= device.bankCode || '-- Click to edit --' %>
-											<% if (device.transferLimitPerDay) { %>
-												<span style="color: #666; font-weight: 500; margin-left: 8px;">(Limit: <%=
-														device.transferLimitPerDay.toLocaleString('en-US') %>)</span>
-												<% } %>
+									<div style="font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+										<span><%= device.bankCode || '-- Click to edit --' %></span>
+										<% if (device.transferType) { %>
+											<span class="transfer-type-badge transfer-type-<%= device.transferType.toLowerCase() %>">
+												<%= device.transferType %>
+											</span>
+										<% } %>
+										<% if (device.transferLimitPerDay) { %>
+											<span style="color: #666; font-weight: 500;">(Limit: <%=
+													device.transferLimitPerDay.toLocaleString('en-US') %>)</span>
+											<% } %>
 									</div>
 									<div style="font-weight: 500; margin-bottom: 4px; font-size: 13px; color: #444;">
 										<%= device.accountNo || '--' %> <span style="margin: 0 6px; color: #888;">-</span>
@@ -1376,7 +1398,28 @@
 				// Calculate position for fixed dropdown
 				if (button) {
 					const rect = button.getBoundingClientRect();
-					menu.style.top = (rect.bottom + 4) + 'px';
+					const windowHeight = window.innerHeight;
+					const spacing = 4;
+					
+					// Temporarily show menu to measure its height
+					menu.style.visibility = 'hidden';
+					menu.style.display = 'block';
+					const menuHeight = menu.offsetHeight;
+					menu.style.display = '';
+					menu.style.visibility = '';
+					
+					// Check if menu would be cut off at bottom of screen
+					const spaceBelow = windowHeight - rect.bottom;
+					const spaceAbove = rect.top;
+					
+					if (spaceBelow < menuHeight + spacing && spaceAbove > menuHeight + spacing) {
+						// Show above button
+						menu.style.top = (rect.top - menuHeight - spacing) + 'px';
+					} else {
+						// Show below button (default)
+						menu.style.top = (rect.bottom + spacing) + 'px';
+					}
+					
 					menu.style.right = (window.innerWidth - rect.right) + 'px';
 				}
 				menu.classList.add('show');
