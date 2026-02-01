@@ -54,7 +54,7 @@
 			padding: 8px 16px;
 			border-radius: 20px;
 			font-weight: 600;
-			font-size: 12px;
+			font-size: 14px;
 		}
 
 		.status-active {
@@ -114,15 +114,15 @@
 			opacity: 0.6;
 		}
 
-	.table-container {
-		background: white;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		overflow-x: auto;
-		display: flex;
-		flex-direction: column;
-		min-height: 30vh;
-	}
+		.table-container {
+			background: white;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			overflow-x: auto;
+			overflow-y: auto;
+			display: flex;
+			flex-direction: column;
+		}
 
 		.devices-table {
 			width: 100%;
@@ -249,7 +249,6 @@
 		.action-menu {
 			position: relative;
 			display: inline-block;
-			z-index: 100;
 		}
 
 		.action-menu-btn {
@@ -274,13 +273,15 @@
 		}
 
 		.action-menu-dropdown {
-			position: fixed;
+			position: absolute;
+			top: 100%;
+			right: 0;
 			background: white;
 			border: 1px solid #ddd;
 			border-radius: 6px;
 			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 			min-width: 150px;
-			z-index: 10000;
+			z-index: 1000;
 			display: none;
 			margin-top: 4px;
 		}
@@ -549,14 +550,8 @@
 			<div class="header-left" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
 				<h1>Device Management</h1>
 				<span class="status-badge"
-					style="background: #e7f3ff; color: #004085;">
-					<%= boxType %>
-				</span>
-				<span class="status-badge <%= pandaConnectionStatus.android ? 'status-active' : 'status-inactive' %>">
-					Android: <%= pandaConnectionStatus.android ? 'CONNECTED' : 'DISCONNECTED' %>
-				</span>
-				<span class="status-badge <%= pandaConnectionStatus.ios ? 'status-active' : 'status-inactive' %>">
-					iOS: <%= pandaConnectionStatus.ios ? 'CONNECTED' : 'DISCONNECTED' %>
+					style="background: #e7f3ff; color: #004085; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 14px;">
+					Box Type: <%= boxType %>
 				</span>
 			</div>
 			<div class="service-status">
@@ -752,15 +747,6 @@
 					</div>
 
 					<div class="form-group">
-						<label>Transfer Type</label>
-						<select name="transferType" id="modal-transferType" required>
-							<option value="">-- Select Transfer Type --</option>
-							<option value="IN">IN</option>
-							<option value="OUT">OUT</option>
-						</select>
-					</div>
-
-					<div class="form-group">
 						<label>Device Status</label>
 						<select name="status" id="modal-status" required>
 							<option value="deactive">Deactive</option>
@@ -854,15 +840,6 @@
 					</div>
 
 					<div class="form-group">
-						<label>Transfer Type</label>
-						<select name="transferType" id="create-transferType" required>
-							<option value="">-- Select Transfer Type --</option>
-							<option value="IN">IN</option>
-							<option value="OUT">OUT</option>
-						</select>
-					</div>
-
-					<div class="form-group">
 						<label>Device Status</label>
 						<select name="status" id="create-status" required>
 							<option value="deactive">Deactive</option>
@@ -913,7 +890,6 @@
 					document.getElementById('modal-accountNo').value = config.accountNo || '';
 					document.getElementById('modal-accountName').value = config.accountName || '';
 					document.getElementById('modal-status').value = config.status || 'deactive';
-					document.getElementById('modal-transferType').value = config.transferType || '';
 
 					// Format transferLimitPerDay as currency with commas (200,000,000)
 					const transferLimit = config.transferLimitPerDay || 0;
@@ -998,7 +974,6 @@
 			const accountNo = document.getElementById('modal-accountNo').value.trim();
 			const accountName = document.getElementById('modal-accountName').value.trim();
 			const status = document.getElementById('modal-status').value;
-			const transferType = document.getElementById('modal-transferType').value.trim();
 
 			// Parse transferLimitPerDay from currency format (remove commas and spaces)
 			const transferLimitInput = document.getElementById('modal-transferLimitPerDay').value.trim();
@@ -1059,10 +1034,6 @@
 					errors.push('Transfer Limit Per Day là bắt buộc và phải >= 0');
 				}
 
-				if (!transferType || transferType === '') {
-					errors.push('Transfer Type là bắt buộc khi status là active');
-				}
-
 				if (errors.length > 0) {
 					showMessage(errors.join(', '), 'error');
 					return;
@@ -1072,17 +1043,6 @@
 			// Validate transferLimitPerDay is required
 			if (!transferLimitInput || transferLimitInput === '' || isNaN(transferLimitPerDay) || transferLimitPerDay < 0) {
 				showMessage('Transfer Limit Per Day là bắt buộc và phải >= 0', 'error');
-				return;
-			}
-
-			// Validate transferType is required
-			if (!transferType || transferType === '') {
-				showMessage('Transfer Type là bắt buộc', 'error');
-				return;
-			}
-
-			if (transferType !== 'IN' && transferType !== 'OUT') {
-				showMessage('Transfer Type phải là IN hoặc OUT', 'error');
 				return;
 			}
 
@@ -1096,7 +1056,6 @@
 					transferLimitPerDay: transferLimitPerDay,
 					doesHandleLargeAmount: doesHandleLargeAmount,
 					minTransferAmount: minTransferAmount,
-					transferType: transferType,
 				};
 
 				if (!hasExistingConfig) {
@@ -1227,7 +1186,6 @@
 			const accountNo = document.getElementById('create-accountNo').value.trim();
 			const accountName = document.getElementById('create-accountName').value.trim();
 			const status = document.getElementById('create-status').value;
-			const transferType = document.getElementById('create-transferType').value.trim();
 
 			// Parse transferLimitPerDay from currency format (remove commas and spaces)
 			const transferLimitInput = document.getElementById('create-transferLimitPerDay').value.trim();
@@ -1284,10 +1242,6 @@
 					errors.push('Transfer Limit Per Day là bắt buộc và phải >= 0');
 				}
 
-				if (!transferType || transferType === '') {
-					errors.push('Transfer Type là bắt buộc khi status là active');
-				}
-
 				if (errors.length > 0) {
 					showMessage(errors.join(', '), 'error');
 					return;
@@ -1297,17 +1251,6 @@
 			// Validate transferLimitPerDay is required
 			if (!transferLimitInput || transferLimitInput === '' || isNaN(transferLimitPerDay) || transferLimitPerDay < 0) {
 				showMessage('Transfer Limit Per Day là bắt buộc và phải >= 0', 'error');
-				return;
-			}
-
-			// Validate transferType is required
-			if (!transferType || transferType === '') {
-				showMessage('Transfer Type là bắt buộc', 'error');
-				return;
-			}
-
-			if (transferType !== 'IN' && transferType !== 'OUT') {
-				showMessage('Transfer Type phải là IN hoặc OUT', 'error');
 				return;
 			}
 
@@ -1323,7 +1266,6 @@
 					transferLimitPerDay: transferLimitPerDay,
 					doesHandleLargeAmount: doesHandleLargeAmount,
 					minTransferAmount: minTransferAmount,
-					transferType: transferType,
 				};
 
 				const response = await fetch(`/api/devices/${deviceId}/config`, {
@@ -1360,7 +1302,6 @@
 		function toggleActionMenu(deviceId) {
 			const menu = document.getElementById(`menu-${deviceId}`);
 			const isOpen = menu.classList.contains('show');
-			const button = document.querySelector(`button[onclick*="toggleActionMenu('${deviceId}')"]`);
 
 			// Close all other menus
 			document.querySelectorAll('.action-menu-dropdown.show').forEach(m => {
@@ -1373,12 +1314,6 @@
 			if (isOpen) {
 				menu.classList.remove('show');
 			} else {
-				// Calculate position for fixed dropdown
-				if (button) {
-					const rect = button.getBoundingClientRect();
-					menu.style.top = (rect.bottom + 4) + 'px';
-					menu.style.right = (window.innerWidth - rect.right) + 'px';
-				}
 				menu.classList.add('show');
 			}
 		}
@@ -1396,13 +1331,6 @@
 				});
 			}
 		});
-
-		// Close dropdown when scrolling
-		window.addEventListener('scroll', function () {
-			document.querySelectorAll('.action-menu-dropdown.show').forEach(menu => {
-				menu.classList.remove('show');
-			});
-		}, true);
 
 		function submitDeviceForm(deviceId) {
 			const fakeEvent = { preventDefault: () => { } };
