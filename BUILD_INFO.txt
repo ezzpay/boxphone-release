@@ -1,4 +1,4 @@
-SOURCE_SHA=146b6dd
-Message=wait 15 seconds and confirm face id
+SOURCE_SHA=e348025
+Message=fix roi for screenhint
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-02T10:08:45+0700
+BUILD_TIME_UTC+7=2026-02-02T14:31:37+0700
