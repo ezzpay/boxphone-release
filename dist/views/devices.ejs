@@ -557,6 +557,24 @@
 			background: #fff3cd;
 			color: #856404;
 		}
+
+		.device-type-badge {
+			padding: 4px 10px;
+			border-radius: 4px;
+			font-weight: 600;
+			font-size: 12px;
+			display: inline-block;
+		}
+
+		.device-type-android {
+			background: #d1ecf1;
+			color: #0c5460;
+		}
+
+		.device-type-ios {
+			background: #e2e3e5;
+			color: #383d41;
+		}
 	</style>
 </head>
 
@@ -610,8 +628,13 @@
 						<tr data-device-id="<%= device.udid %>">
 							<td>
 								<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-									<div class="device-name">
-										<%= device.name || device.udid %>
+									<div class="device-name" style="display: flex; align-items: center; gap: 8px;">
+										<span><%= device.name || device.udid %></span>
+										<% if (device.deviceType) { %>
+											<span class="device-type-badge device-type-<%= device.deviceType.toLowerCase() %>">
+												<%= device.deviceType %>
+											</span>
+										<% } %>
 									</div>
 									<div style="font-size: 13px; color: #666; display: flex; align-items: center; gap: 6px;">
 										<span style="font-weight: 700;">udid:</span>
@@ -714,6 +737,15 @@
 			<div class="modal-body">
 				<form id="editDeviceForm" onsubmit="submitEditForm(event)">
 					<div class="form-group">
+						<label>Device Type</label>
+						<select name="deviceType" id="modal-deviceType" required>
+							<option value="">-- Select Device Type --</option>
+							<option value="ANDROID">ANDROID</option>
+							<option value="IOS">IOS</option>
+						</select>
+					</div>
+
+					<div class="form-group">
 						<label>Bank Code</label>
 						<select name="bankCode" id="modal-bank" required>
 							<option value="">-- Select Bank --</option>
@@ -814,6 +846,15 @@
 							<option value="">-- Select Device --</option>
 						</select>
 						<input type="text" name="deviceId" id="create-deviceId-input" placeholder="Enter device UDID" required>
+					</div>
+
+					<div class="form-group">
+						<label>Device Type</label>
+						<select name="deviceType" id="create-deviceType" required>
+							<option value="">-- Select Device Type --</option>
+							<option value="ANDROID">ANDROID</option>
+							<option value="IOS">IOS</option>
+						</select>
 					</div>
 
 					<div class="form-group">
@@ -927,6 +968,7 @@
 					const config = data.data;
 
 					// Populate modal form with API data
+					document.getElementById('modal-deviceType').value = config.deviceType || '';
 					document.getElementById('modal-bank').value = config.bankCode || '';
 					const availableAmount = config.availableAmount || 0;
 					document.getElementById('modal-amount').value = availableAmount > 0
@@ -1021,6 +1063,7 @@
 			const accountName = document.getElementById('modal-accountName').value.trim();
 			const status = document.getElementById('modal-status').value;
 			const transferType = document.getElementById('modal-transferType').value.trim();
+			const deviceType = document.getElementById('modal-deviceType').value.trim();
 
 			// Parse transferLimitPerDay from currency format (remove commas and spaces)
 			const transferLimitInput = document.getElementById('modal-transferLimitPerDay').value.trim();
@@ -1119,6 +1162,7 @@
 					doesHandleLargeAmount: doesHandleLargeAmount,
 					minTransferAmount: minTransferAmount,
 					transferType: transferType,
+					deviceType: deviceType || undefined,
 				};
 
 				if (!hasExistingConfig) {
@@ -1250,6 +1294,7 @@
 			const accountName = document.getElementById('create-accountName').value.trim();
 			const status = document.getElementById('create-status').value;
 			const transferType = document.getElementById('create-transferType').value.trim();
+			const deviceType = document.getElementById('create-deviceType').value.trim();
 
 			// Parse transferLimitPerDay from currency format (remove commas and spaces)
 			const transferLimitInput = document.getElementById('create-transferLimitPerDay').value.trim();
@@ -1346,6 +1391,7 @@
 					doesHandleLargeAmount: doesHandleLargeAmount,
 					minTransferAmount: minTransferAmount,
 					transferType: transferType,
+					deviceType: deviceType || undefined,
 				};
 
 				const response = await fetch(`/api/devices/${deviceId}/config`, {

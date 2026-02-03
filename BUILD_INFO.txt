@@ -1,4 +1,4 @@
-SOURCE_SHA=17776be
-Message=.
+SOURCE_SHA=7ca65aa
+Message=Fix: reset panda and login android only
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-03T02:08:53+0700
+BUILD_TIME_UTC+7=2026-02-03T16:22:20+0700
