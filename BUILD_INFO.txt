@@ -1,4 +1,4 @@
-SOURCE_SHA=2a36df4
-Message=Merge pull request #25 from ezzpay/feat/internal-transfer
+SOURCE_SHA=d8bd057
+Message=fix: get bank out for withdrawal
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-04T03:10:45+0700
+BUILD_TIME_UTC+7=2026-02-04T03:39:02+0700
