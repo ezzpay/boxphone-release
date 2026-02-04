@@ -1,4 +1,4 @@
-SOURCE_SHA=59d223f
-Message=Fix: not checking balance while doing internal transfer
+SOURCE_SHA=9e1c3ed
+Message=Merge branch 'main' of https://github.com/ezzpay/boxphone
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-04T14:39:38+0700
+BUILD_TIME_UTC+7=2026-02-04T17:38:10+0700
