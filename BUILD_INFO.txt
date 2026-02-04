@@ -1,4 +1,4 @@
-SOURCE_SHA=d8bd057
-Message=fix: get bank out for withdrawal
+SOURCE_SHA=52d6dd4
+Message=Fix: not inactivate bank in
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-04T03:39:02+0700
+BUILD_TIME_UTC+7=2026-02-04T14:23:50+0700
