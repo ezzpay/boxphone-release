@@ -1,4 +1,4 @@
-SOURCE_SHA=e8ca544
-Message=fix: return home acb
+SOURCE_SHA=9cf3758
+Message=fix: click close popup error faceid acb
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-05T00:29:23+0700
+BUILD_TIME_UTC+7=2026-02-05T02:32:29+0700
