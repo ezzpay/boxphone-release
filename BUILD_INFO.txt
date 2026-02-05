@@ -1,4 +1,4 @@
-SOURCE_SHA=7891206
-Message=Merge branch 'main' of https://github.com/ezzpay/boxphone
+SOURCE_SHA=8820337
+Message=Fix FACE_ID_POPPUP_CLOSE_BTN
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-05T09:55:19+0700
+BUILD_TIME_UTC+7=2026-02-05T10:33:43+0700
