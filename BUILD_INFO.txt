@@ -1,4 +1,4 @@
-SOURCE_SHA=9cf3758
-Message=fix: click close popup error faceid acb
+SOURCE_SHA=7891206
+Message=Merge branch 'main' of https://github.com/ezzpay/boxphone
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-05T02:32:29+0700
+BUILD_TIME_UTC+7=2026-02-05T09:55:19+0700
