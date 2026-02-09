@@ -558,6 +558,11 @@
 			color: #856404;
 		}
 
+		.transfer-type-all {
+			background: #d1ecf1;
+			color: #0c5460;
+		}
+
 		.device-type-badge {
 			padding: 4px 10px;
 			border-radius: 4px;
@@ -811,6 +816,7 @@
 							<option value="">-- Select Transfer Type --</option>
 							<option value="IN">IN</option>
 							<option value="OUT">OUT</option>
+							<option value="ALL">ALL</option>
 						</select>
 					</div>
 
@@ -922,6 +928,7 @@
 							<option value="">-- Select Transfer Type --</option>
 							<option value="IN">IN</option>
 							<option value="OUT">OUT</option>
+							<option value="ALL">ALL</option>
 						</select>
 					</div>
 
@@ -1146,8 +1153,8 @@
 				return;
 			}
 
-			if (transferType !== 'IN' && transferType !== 'OUT') {
-				showMessage('Transfer Type phải là IN hoặc OUT', 'error');
+			if (transferType !== 'IN' && transferType !== 'OUT' && transferType !== 'ALL') {
+				showMessage('Transfer Type phải là IN, OUT hoặc ALL', 'error');
 				return;
 			}
 
@@ -1373,8 +1380,8 @@
 				return;
 			}
 
-			if (transferType !== 'IN' && transferType !== 'OUT') {
-				showMessage('Transfer Type phải là IN hoặc OUT', 'error');
+			if (transferType !== 'IN' && transferType !== 'OUT' && transferType !== 'ALL') {
+				showMessage('Transfer Type phải là IN, OUT hoặc ALL', 'error');
 				return;
 			}
 

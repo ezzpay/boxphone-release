@@ -1,4 +1,4 @@
-SOURCE_SHA=94f35b4
-Message=ACB v2
+SOURCE_SHA=935f952
+Message=Merge pull request #27 from ezzpay/feat/set-both-transfer-in-or-out-for-one-device
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-07T02:54:19+0700
+BUILD_TIME_UTC+7=2026-02-09T08:10:09+0700
