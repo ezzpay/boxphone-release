@@ -1,4 +1,4 @@
-SOURCE_SHA=c3bc8fc
-Message=Fix: reset panda time
+SOURCE_SHA=c11149c
+Message=Fix: reset panda time 1h
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-09T17:34:53+0700
+BUILD_TIME_UTC+7=2026-02-10T01:33:27+0700
