@@ -1,4 +1,4 @@
-SOURCE_SHA=935f952
-Message=Merge pull request #27 from ezzpay/feat/set-both-transfer-in-or-out-for-one-device
+SOURCE_SHA=c3bc8fc
+Message=Fix: reset panda time
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-09T08:10:09+0700
+BUILD_TIME_UTC+7=2026-02-09T17:34:53+0700
