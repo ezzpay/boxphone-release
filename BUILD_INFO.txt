@@ -1,4 +1,4 @@
-SOURCE_SHA=a8b0290
-Message=Fix: acb roi with facrid error
-TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-13T03:48:03+0700
+SOURCE_SHA=5a3b87e
+Message=feat: click by text
+TAG_OR_REF=feat/click-by-text
+BUILD_TIME_UTC+7=2026-02-13T04:15:26+0700
