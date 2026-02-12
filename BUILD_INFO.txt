@@ -1,4 +1,4 @@
-SOURCE_SHA=8ddd1fc
-Message=Feat: lock screen rotation
+SOURCE_SHA=a8b0290
+Message=Fix: acb roi with facrid error
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-12T12:59:21+0700
+BUILD_TIME_UTC+7=2026-02-13T03:48:03+0700
