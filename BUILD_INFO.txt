@@ -1,4 +1,4 @@
-SOURCE_SHA=0595320
-Message=Fix: lock screen rotation
+SOURCE_SHA=6a8369b
+Message=Update(config): redis info
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-22T23:37:22+0700
+BUILD_TIME_UTC+7=2026-02-23T18:24:01+0700
