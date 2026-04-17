@@ -1,4 +1,4 @@
-SOURCE_SHA=6a8369b
-Message=Update(config): redis info
+SOURCE_SHA=38b8cd3
+Message=redis config
 TAG_OR_REF=main
-BUILD_TIME_UTC+7=2026-02-23T18:24:01+0700
+BUILD_TIME_UTC+7=2026-04-17T10:37:56+0700
